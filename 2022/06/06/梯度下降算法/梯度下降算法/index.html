@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>梯度下降算法 | 异梦的博客</title><meta name="keywords" content="深度学习"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="梯度下降">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梯度下降算法">
+<meta property="og:url" content="https://yimeng436.github.io/2022/06/06/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="梯度下降">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-06-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-15T06:34:21.111Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/06/06/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '梯度下降算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-15 14:34:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">梯度下降算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-05T16:00:00.000Z" title="发表于 2022-06-06 00:00:00">2022-06-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-15T06:34:21.111Z" title="更新于 2022-06-15 14:34:21">2022-06-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="梯度下降算法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center>梯度下降算法</center></strong></p>
+<font size = 4>
+
+<h2 id="求最优解"><a href="#求最优解" class="headerlink" title="求最优解"></a>求最优解</h2><p>在深度学习中训练模型中最终目标就是找到一组最适合训练集的权重W，而评估权重的好坏，方法一般都是找到一组权重使得设计是损失函数最小，寻找最小值过去常用的有枚举和分治算法。</p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>枚举算法的思路就是先确定权重的大概的取值范围，然后再区间中把大量的权重值都求出来，取最小的值。显然这种方法在深度学习中是不太可行的，因为深度学习的参数往往都是几百万甚至几千万的规模，这种方法计算量过于庞大。</p>
+<h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><p>由于枚举计算量太大，那么利用分治的思想，先进行几次比较稀疏的搜索，再在搜索结果中取最小的那个部分，再在上次最小值附近继续搜索，取得最小值，再在最小值附近搜索以此类推直至结果收敛。这种方法能够减小比较大的计算量，但是也有明显的缺陷，就是当我们的损失函数不是一个凸函数时，这种方法容易找到的不是最优解，而是一个局部的解。</p>
+<p><img src="/images/image-20220606212222140.png" alt="image-20220606212222140"></p>
+<p>分治算法任意取得图中这些点，但是后面发现在神经网络中局部最优解的结果并不是特别多。</p>
+<h3 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h3><p>梯度下降算法来找一组满足损失最小的权重的过程，被称作优化问题。每次计算要确定的是对于当前目标函数对应的权值，进行优化时，应该往哪个方向移动，在一元函数中就是确定，应该往左移还是右移，确定的方法就是用目标函数对权重w求偏导，让权重w朝着偏导数下降的方法移动进行跟新</p>
+<p><img src="/images/image-20220606212248203.png" alt="image-20220606212248203"></p>
+<p>cost就是目标函数。a为学习率。梯度下降算法属于一种贪心算法，只考虑当前最优，也是可能会得到的结果为局部最优解而不是全局最优解，同样可能陷入局部最优解的点中。同样这些点在求解过程中并不是很多，所以在进行训练时考虑的最多的并不是局部最优解的问题，而是利用梯度下降算法可能会遇到”鞍点“这种情况，这个时候会导致梯度消失，使得无法跟新权值。</p>
+<p><img src="/images/image-20220606212429823.png" alt="image-20220606212429823"></p>
+<p>后来提出随机梯度下降算法，将之前的损失函数对整个样本进行求损失跟新，改为将这个训练集分成一个一个进行跟新，因为每个数据集中都会有噪声的存在，在陷入鞍点之后，这些噪声可能能够推动权重跨越过鞍点找到最优解，使得相比于整个数据集计算损失的性能更好。但是随机梯度下降算法同样存在问题，在普通梯度下降算法中我们一次计算损失的过程每个样本之间是不相互依赖的，所有样本可以并行计算，而对于随机梯度下降算法，后一个样本跟新权重时是依赖于前一个样本的结果的，所以失去了并行性，在时间复杂度上随机梯度下降算法比普通梯度下降算法慢的多。于是为了取折中现在的梯度下降算法都采用的是Mini-Batch，就是将多个样本作为一组，每过一组跟新一次权重。</p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>在模型训练过程中我们跟新权重的公式是w&#x3D;w-a * loss对w的偏导。所以一次跟新主要就是要得到loss对w的偏导的梯度值。假设输入为x初始权重为w，中间计算得到的结果为r1、r2，输入到输出loss的过程称作前向传播，前向过程中对于输入w，x经过一次计算得到r1，再用r1进行另一次计算得到r2，r2在计算得到loss，跟新时要求得loss对w的偏导，根据链式法则利用中间变量loss对w的偏导&#x3D;loss对r2的偏导 * r2对w的偏导，而r2对w的偏导又可以利用输入r1得到，所以loss对w的偏导&#x3D;loss对r2的偏导 * r2对r1的偏导 * r1对w的偏导，而前向传播时，r1是一个关于w的函数，r2是关于r1的函数，loss是关于r2的函数，所以在前向传播时，可以保留局部结果对于输入变量偏导的梯度，就能够得到跟新需要的梯度值。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><img src="/images/image-20220606212615327.png" alt="image-20220606212615327"></p>
+<p>假设输入w&#x3D;1，x&#x3D;1，经过两个中间运算，前馈时，保留局部的梯度，y^&#x3D;w * x&#x3D;1,计算y^对w的偏导&#x3D;x&#x3D;1，往下传播，r&#x3D; y^ -y,保留r对y^ 的偏导&#x3D;1，输入r计算loss&#x3D;r^2&#x3D;1，保留偏导等于2r&#x3D;-2。开始反向传播，用后面的偏导乘以前面所保留的局部梯度得到loss对w的偏导。</p>
+<p>若要跟新的值不止一个计算的过程也是一样，要跟新什么最后就是要得到loss对它的偏导。</p>
+<p><img src="/images/image-20220606212626630.png" alt="image-20220606212626630"></p>
+<p>这里计算出的两个结果都为2。</p>
+</font></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/06/06/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/">https://yimeng436.github.io/2022/06/06/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/06/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">自动拆装箱</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/06/tensorflow/tensorflow/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">tensorflow</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/06/MNIST/MNIST/" title="MNIST"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">MNIST</div></div></a></div><div><a href="/2022/06/06/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/" title="前向传播"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">前向传播</div></div></a></div><div><a href="/2022/06/06/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="卷积神经网络"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">卷积神经网络</div></div></a></div><div><a href="/2022/06/06/tensorflow/tensorflow/" title="tensorflow"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">tensorflow</div></div></a></div><div><a href="/2022/06/15/PyTorch/PyTorch/" title="PyTorch"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">PyTorch</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E6%9C%80%E4%BC%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">求最优解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.1.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B2%BB"><span class="toc-number">1.2.</span> <span class="toc-text">分治</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">梯度下降算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">2.</span> <span class="toc-text">反向传播</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">例子</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/15/PyTorch/PyTorch/" title="PyTorch"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="PyTorch"/></a><div class="content"><a class="title" href="/2022/06/15/PyTorch/PyTorch/" title="PyTorch">PyTorch</a><time datetime="2022-06-14T16:00:00.000Z" title="发表于 2022-06-15 00:00:00">2022-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="多线程"/></a><div class="content"><a class="title" href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程">多线程</a><time datetime="2022-06-14T16:00:00.000Z" title="发表于 2022-06-15 00:00:00">2022-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/06/MNIST/MNIST/" title="MNIST"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="MNIST"/></a><div class="content"><a class="title" href="/2022/06/06/MNIST/MNIST/" title="MNIST">MNIST</a><time datetime="2022-06-05T16:00:00.000Z" title="发表于 2022-06-06 00:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/06/CART%20%E7%AE%97%E6%B3%95/CART%20%E7%AE%97%E6%B3%95/" title="CART 算法"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="CART 算法"/></a><div class="content"><a class="title" href="/2022/06/06/CART%20%E7%AE%97%E6%B3%95/CART%20%E7%AE%97%E6%B3%95/" title="CART 算法">CART 算法</a><time datetime="2022-06-05T16:00:00.000Z" title="发表于 2022-06-06 00:00:00">2022-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/06/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/" title="前向传播"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="前向传播"/></a><div class="content"><a class="title" href="/2022/06/06/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/" title="前向传播">前向传播</a><time datetime="2022-06-05T16:00:00.000Z" title="发表于 2022-06-06 00:00:00">2022-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

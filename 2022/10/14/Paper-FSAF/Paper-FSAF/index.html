@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>FSAF论文 | 异梦的博客</title><meta name="keywords" content="目标检测"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FSAF论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FSAF论文">
+<meta property="og:url" content="https://yimeng436.github.io/2022/10/14/Paper-FSAF/Paper-FSAF/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="FSAF论文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-10-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-17T08:50:01.810Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="目标检测">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/10/14/Paper-FSAF/Paper-FSAF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'FSAF论文',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-17 16:50:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">FSAF论文</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-17T08:50:01.810Z" title="更新于 2022-10-17 16:50:01">2022-10-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="FSAF论文"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=5> FSAF论文</center></strong></p>
+<h1 id="以往目标检测算法存在的问题"><a href="#以往目标检测算法存在的问题" class="headerlink" title="以往目标检测算法存在的问题"></a>以往目标检测算法存在的问题</h1><p>自Faster-RCNN网络提出后，大部分的目标检测算法都以这个为基础在anchor的设计上做文章，</p>
+<p>后又随着FPN的提出，大大增加了小目标的检测效率，FPN也成了目标检测算法的标配框架。</p>
+<p>FPN构建的特征金字塔，自顶向下的整个过程来看，浅层分辨率高感受野小对应的anchor小预测小目标，深层包含更多的语义信息分辨率低感受野大对饮的anchor大预测大目标。而在分配当前需要使用哪个层来处理，做法是根据gt 和 所有anchor计算IOU，取最大的IOU对应的anchor，而anchor的大小又唯一对应一个层，然后就使用这层得到的feature map。</p>
+<p>看似这种方法是很合理的，但是这是一种无法被证明的方法，无法被说明这种做法是最好的，如40X40和50X50的被分配到了同一层，而60X60和50X50被分在了不同的地方。</p>
+<p><img src="/../../images/image-20221014162546073.png" alt="image-20221014162546073"></p>
+<h1 id="FSAF"><a href="#FSAF" class="headerlink" title="FSAF"></a>FSAF</h1><p>这篇文章提出了一种可学习的 自动适应哪个instance应该选择最合适的feature，size成了一个无关变量，选择的依据从instance size 变成了 instance content。这也是anchor free的由来，使用<strong>FSAF模块</strong> <strong>Feature Selective Anchor-Free Module</strong> 来决定为instance选择哪个feature。</p>
+<p>这个模块可以被用于各种单阶段的目标检测中如SSD等。这篇文章提出时，RetinaNet达到了state-of-art的水平，所以也以RetinaNet作为主结构。</p>
+<h2 id="RetinaNet"><a href="#RetinaNet" class="headerlink" title="RetinaNet"></a>RetinaNet</h2><p>Retinanet 是一个one-stage的目标检测的方法，结构和FPN_Resnet50有点类似，同样在主干特征提取网络中使用的是 Resnet50，自顶向下的过程中保存了res3-res5的五个（p3-p5）feature_map，用于后续自底向上的feature_mapd的特征融合，每一个都对应一个out_conv，在最小的feature_map中还分别做了两次卷积+下采样，分别作为另外两个output（p6、P7），所有p3-p7都会被作为有效特征层，输入到后续的分类和回归子网络中。分类和回归自子网络都是权值共享的且都是anchor_based的。</p>
+<ul>
+<li>分类子网络：</li>
+</ul>
+<p>​		所有有效特征层的输入都会经过4次尺度不变通道都为256的3X3卷积，最后经过一个3X3通道数为K * Anchor的的卷积，每个先验框都会打上所属类别的得分。</p>
+<ul>
+<li>回归子网络：</li>
+</ul>
+<p>​		和分类子网络一样先经过3X3X256 *4个卷积，在通过3X3通道数为4 * Anchor的卷积，4 * anchor表示就是，每一个anchor对应的调整参数。</p>
+<p><img src="/../../images/image-20221017142645474.png" alt="image-20221017142645474"></p>
+<h2 id="FSAF模块"><a href="#FSAF模块" class="headerlink" title="FSAF模块"></a>FSAF模块</h2><p>FSAF模块的构建很简单，就只是在Retinanet的分类和回归子网络后，和基于anchor的分类和回归共享feature_map，与anchor_based的分类回归并行的两个anchor_free的分类和回归子网络。</p>
+<p><img src="/../../images/image-20221017142944261.png" alt="image-20221017142944261"></p>
+<ul>
+<li>分类子网络</li>
+</ul>
+<p>​		使用RetinaNet分类子网络前面W * H * 256的feature_map作为输入，经过一个W * H * K的卷积，K表示所有类别数，得到的feature_map中，每个channel上的每一个点（i,j）都表示这个点映射会原图像中的区域中目标类别为K的概率大小。</p>
+<ul>
+<li>回归子网络</li>
+</ul>
+<p>​		同样使用RetinaNet回归子网络前面的W * H * 256的feature_map作为输入，经过一个经过一个W * H * 4的卷积，4就是与类别无关的四个参数，每个通道上的（i,j）点上取的四个值，就是这个像素点到无anchor的预测框的上，下，左，右的距离</p>
+<ul>
+<li>正负样本选择</li>
+</ul>
+<p>​		对于一个样本实例，我们知道类别K，和中心宽高，将其记作b &#x3D; [x,y,w,h]，对于在每一个金字塔的层级上实例对应的投影区域为 b<sup>L</sup><sub>p</sub> &#x3D; b&#x2F;(2<sup>L</sup>) ,L表示金字塔的层级。每一个投影框都对应一个有效框和忽略框，设<strong>ε<sub>e</sub>  &#x3D; 0.2，和 ε<sub>i</sub> &#x3D; 0.5</strong>  ,有效框和忽略框的中心坐标和b<sup>L</sup><sub>p</sub>一样不发生改变，但是宽高分别等于b<sup>L</sup><sub>p</sub> * ε<sub>e</sub> 和 b<sup>L</sup><sub>p</sub>  * ε<sub>i</sub> 。忽略框就是在计算损失时不会参与计算，损失也不会回传。</p>
+<p>​		对于分类子网络来说，将有效框内的所有像素点都设为1，有效框外到忽略框内的所有像素点设为-1，无效框以外的所有都是负样本设为0。</p>
+<p>​		对于回归子网络来说，只会使用到有效框，有效框里面的像素点分别表示每一个点到投影框的上下左右四个边界的距离，并且这四个距离是分channel的，每一个channel对应一个方向，每一个方向都是从近到远的一边变化。</p>
+<p><img src="/../../images/image-20221017153218041.png" alt="image-20221017153218041"></p>
+<ul>
+<li><p>损失计算</p>
+<ul>
+<li><p>分类损失</p>
+<p>分类损失采用的是Focal loss来计算，Focal loss通常用于单阶段目标检测算法中，提出的目的就是为了防止正负样本数不均匀，负样本数量过大，导致损失和远大于正样本的损失。</p>
+<p><img src="/../../images/image-20221017161158927.png" alt="image-20221017161158927"></p>
+<p>在投影框的有效区域都是y &#x3D; 1的部分，忽略框以外的都是otherwise的部分。p就是两个框每一个像素点的预测概率的值。</p>
+</li>
+<li><p>回归损失</p>
+<p>采用的是IOU LOSS来优化，IOU LOSS的计算也很简单，就是用 1-IOU计算得到。</p>
+</li>
+</ul>
+</li>
+<li><p>anchor-based和anchor-free联合</p>
+</li>
+</ul>
+<p>​		anchor-free 部分计算得到的两个损失之和取最小值，就将GT分配到对应的层级上，再采用anchor-based做一次预测。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/10/14/Paper-FSAF/Paper-FSAF/">https://yimeng436.github.io/2022/10/14/Paper-FSAF/Paper-FSAF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Faster-RCNN论文</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-25</div><div class="title">Faster-RCNN论文</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E5%BE%80%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">以往目标检测算法存在的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FSAF"><span class="toc-number">2.</span> <span class="toc-text">FSAF</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RetinaNet"><span class="toc-number">2.1.</span> <span class="toc-text">RetinaNet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FSAF%E6%A8%A1%E5%9D%97"><span class="toc-number">2.2.</span> <span class="toc-text">FSAF模块</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/22/Redis/Redis/" title="Redis"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Redis"/></a><div class="content"><a class="title" href="/2022/08/22/Redis/Redis/" title="Redis">Redis</a><time datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/MybatisPlus/MybatisPlus/" title="MybatisPlus"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="MybatisPlus"/></a><div class="content"><a class="title" href="/2022/08/20/MybatisPlus/MybatisPlus/" title="MybatisPlus">MybatisPlus</a><time datetime="2022-08-19T16:00:00.000Z" title="发表于 2022-08-20 00:00:00">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/" title="SpringBoot源码"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="SpringBoot源码"/></a><div class="content"><a class="title" href="/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/" title="SpringBoot源码">SpringBoot源码</a><time datetime="2022-08-18T16:00:00.000Z" title="发表于 2022-08-19 00:00:00">2022-08-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

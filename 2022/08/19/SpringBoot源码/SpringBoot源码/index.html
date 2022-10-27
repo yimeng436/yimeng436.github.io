@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>SpringBoot源码 | 异梦的博客</title><meta name="keywords" content="Java"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SpringBoot源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot源码">
+<meta property="og:url" content="https://yimeng436.github.io/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="SpringBoot源码">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-08-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-21T08:42:48.365Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringBoot源码',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-21 16:42:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringBoot源码</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-18T16:00:00.000Z" title="发表于 2022-08-19 00:00:00">2022-08-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-21T08:42:48.365Z" title="更新于 2022-08-21 16:42:48">2022-08-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringBoot源码"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=5>SpringBoot源码</font></center></strong></p>
+<h1 id="Spring容器中Bean的创建"><a href="#Spring容器中Bean的创建" class="headerlink" title="Spring容器中Bean的创建"></a>Spring容器中Bean的创建</h1><font size=3.5>
+
+<p>我么在使用Spring时候，创建了一个类，只需要在xml配置文件中配置 注册对应的 bean，然后在通过ClassPathXmlApplicationContext 指定配置文件路径，得到上下文对象，利用这个对象读取spring容器中的bean就能够创建对象，但是为什么呢？</p>
+<p>通过断点调试发现，获取上下文对象时，User就已经被创建了</p>
+<p><img src="/../../images/image-20220819153732527.png" alt="image-20220819153732527"></p>
+<p><img src="/../../images/image-20220819153747513.png" alt="image-20220819153747513"></p>
+<p>跟着这个构造方法往上，可以发现最后会进入另一个构造方法<img src="/../../images/image-20220819154001355.png" alt="image-20220819154001355"></p>
+<p>这个构造方法中有简单的几行，那么同样断点查看一下User是在哪被创建的。经过调试是在**refresh()**完成的创建</p>
+<p><img src="/../../images/image-20220819154326088.png" alt="image-20220819154326088"></p>
+<p>继续往refresh方法中跳，可以发现User的创建完成于</p>
+<p><img src="/../../images/image-20220819154557764.png" alt="image-20220819154557764"></p>
+<p>根据注释也能发现  这行代码完成了非懒加载的单例的初始化</p>
+<p>在finishBeanFactoryInitialization方法中，能够得到是preInstantiateSingletons创建的我们的User</p>
+<p><img src="/../../images/image-20220819154959666.png" alt="image-20220819154959666"></p>
+<p>再往下，我们会进入到一个接口中，有些接口会有很多实现类，所以我们为了避免找错直接在调用这个方法的地方打上断点，让Idea帮我们找是哪个实现类</p>
+<ul>
+<li>接口方法</li>
+</ul>
+<p><img src="/../../images/image-20220819155124667.png" alt="image-20220819155124667"></p>
+<ul>
+<li>实现类、调用接口方法</li>
+</ul>
+<p><img src="/../../images/image-20220819155224251.png" alt="image-20220819155224251"></p>
+<p>再往下，在实现类中，由getBean方法完成的创建，beanname就是我们在配置文件中的id值。</p>
+<p><img src="/../../images/image-20220819160343803.png" alt="image-20220819160343803"></p>
+<p>getBean又调用了doGetBean</p>
+<p><img src="/../../images/image-20220819160552251.png" alt="image-20220819160552251"></p>
+<p>继续往下</p>
+<p><img src="/../../images/image-20220819161156403.png" alt="image-20220819161156403"></p>
+<p>结合注释和断点输出，可以发现是在这一段里面完成的对象创建，这是一个lamba表达式参数是String和ObjectFactory。</p>
+<ul>
+<li>ObjectFactory这个函数式接口中唯一的方法是getObject，所以这个lamba表达式的方法体就是，这个接口的getObject方法的实现</li>
+</ul>
+<p><img src="/../../images/image-20220819162614897.png" alt="image-20220819162614897"></p>
+<p>进入getSingleton这个方法：</p>
+<p>接着会看到一个比较有意思的代码</p>
+<p><img src="/../../images/image-20220819161432958.png" alt="image-20220819161432958"></p>
+<p>通过这个方法可以看到，singletonObjects通过get方法获得了一个Object类型的，并且根据命名规则，singletonObjects这个单词使用的是复数形式，说明这个对象应该包含很多Object类型的对象，应该是个集合，而集合通过get方法获取一个对象，参数是beanname（String类型），很容易猜想这是一个Map&lt;String，Object&gt;类型的集合，</p>
+<p><img src="/../../images/image-20220819161730819.png" alt="image-20220819161730819"></p>
+<p>事实上他就是一个Map集合，并且为了线程安全使用的是ConcurrentHashMap，通过这个集合也容易想到Spring背后所有创建了的Bean应该都是通过Map集合保存的，并且需要使用的时候通过get方法去获得并返回。</p>
+<p>接着，我们会看到getObject方法，并且我们的对象也是在这完成的创建</p>
+<p><img src="/../../images/image-20220819162544717.png" alt="image-20220819162544717"></p>
+<p>在进入到getObject这个方法中：</p>
+<p><img src="/../../images/image-20220819162814479.png" alt="image-20220819162814479"></p>
+<p>这个方法是不是很眼熟，没错就是上面我们写到的lamba表达式的方法体，因为调用getObject的是一个ObjcetFactory类型的对象，所以他会回到这个方法体执行ObjcetFactory接口中的getObject的具体实现</p>
+<p><img src="/../../images/image-20220819163026846.png" alt="image-20220819163026846"></p>
+<p>进入的方法体中只有一个长得像能够创建Bean的方法，但是这是一个抽象方法，同样让Idea帮我们决定跳到哪执行：</p>
+<p><img src="/../../images/image-20220819163443044.png" alt="image-20220819163443044"></p>
+<p>进入方法后会看到老熟人Class&lt;？&gt;字节码对象，就能够猜到这里差不多是完成创建的地方，因为框架底层都是反射嘛。</p>
+<p><img src="/../../images/image-20220819163724350.png" alt="image-20220819163724350"></p>
+<p>再执行完这行之后对象又被创建了，所以这个是创建对象相关的方法。</p>
+<p>进入doCreateBean：</p>
+<p><img src="/../../images/image-20220819164041168.png" alt="image-20220819164041168"></p>
+<p>老样子，看看哪里执行得到创建的结果，createBeanInstance长得也像会创建对象的方法。</p>
+<p>进入createBeanInstance:</p>
+<p><img src="/../../images/image-20220819164352237.png" alt="image-20220819164352237"></p>
+<p>进入instantiateBean方法：</p>
+<p><img src="/../../images/image-20220819164458877.png" alt="image-20220819164458877"></p>
+<p>进入instantiate方法：</p>
+<p>先通过反射拿到字节码对象</p>
+<p><img src="/../../images/image-20220819164644243.png" alt="image-20220819164644243"></p>
+<p>又通过字节码对象获得构造器</p>
+<p><img src="/../../images/image-20220819164716208.png" alt="image-20220819164716208"></p>
+<p>根据返回结果可以看出获得的是空参构造，这也解释了为什么我们的实体类中需要空参构造</p>
+<p><img src="/../../images/image-20220819165103144.png" alt="image-20220819165103144"></p>
+<p>最后这里有一个返回值，前面都没完成创建所以肯定实在这个方法里完成的创建。</p>
+<p><img src="/../../images/image-20220819165408290.png" alt="image-20220819165408290"></p>
+<p>进入instantiateClass:</p>
+<p><img src="/../../images/image-20220819165624252.png" alt="image-20220819165624252"></p>
+<p>看到这一行，我们就知道终于我们的对象最后的完成，是通过构造器完成的创建。</p>
+<p>结论：</p>
+<ul>
+<li>所有非懒加载的单例bean会在Spring容器创建的时候创建，创建容器时会创建一个beanFactory对象，这个beanFactory对象会调用doGetBean方法来完成bean的创建，底层是通过反射获取构造器来创建的。</li>
+<li>所有被创建的对象都会被放入一个map集合中，为了保证线程安全使用的时ConcurrentHashMap来创建，键就是 我们配置文件中的 id ，值就是class对应的创建好的单例对象</li>
+</ul>
+<h1 id="获取Bean对象"><a href="#获取Bean对象" class="headerlink" title="获取Bean对象"></a>获取Bean对象</h1><p><img src="/../../images/image-20220821125652468.png" alt="image-20220821125652468"></p>
+<p>肯定是通过这一行代码完成的。</p>
+<p>进入getBean</p>
+<p><img src="/../../images/image-20220821125913698.png" alt="image-20220821125913698"></p>
+<p>根据刚刚我们创建Bean的推导，我们创建的时候需要一个beanFactory对象，所以理所当然的要获得一个bean肯定也要通过这个beanFactory对象去获得。</p>
+<p>同样创建时候调用的是doGetBean 方法（beanFactory调用getBean，getBean调用doGetBean），这里也是通过doGetBean方法获得的。</p>
+<p>进入doGetBean方法，beanName就是我们要获得的bean对象的名字，也是xml配置文件中的id。</p>
+<p><img src="/../../images/image-20220821130314169.png" alt="image-20220821130314169"></p>
+<p>这个方法我们在创建的过程中也遇到过</p>
+<p>进入getSingleton方法：</p>
+<p><img src="/../../images/image-20220821130532536.png" alt="image-20220821130532536"></p>
+<p>可以看到我们之前在创建bean对象也出现了这个map集合，里面存储了所有创建好的bean对象，我们通过get方法去获取。然后将其返回。</p>
+<p>结论：我们在获取Bean对象的过程中，实际上也是通过beanFactory对象调用doGetBean方法，doGetBean里面通过存储单例对象的map集合获取对应的对象。</p>
+<h1 id="BeanDefinition-的创建"><a href="#BeanDefinition-的创建" class="headerlink" title="BeanDefinition 的创建"></a>BeanDefinition 的创建</h1><p>在阅读bean对象创建的过程中会遇到一个BeanDefinition对象，那这个对象是干嘛的，什么时候创建的？</p>
+<p>首先我们获取bean是通过beanFactory来获得的，其实beanFactory还创建了beaDefinition，所以我们需要先定位到在哪里创建了beanFactory对象。</p>
+<p><img src="/../../images/image-20220821132741438.png" alt="image-20220821132741438"></p>
+<p>beanFactory对象中包括这些和beaDefinition相关的一些属性。这一行代码看名字也知道这是创建beanFactory用的，所以beanDefinition的创建也在这里面。</p>
+<p>进入obtainFreshBeanFactory：</p>
+<p><img src="/../../images/image-20220821133200225.png" alt="image-20220821133200225"></p>
+<p>进入refreshBeanFactory：</p>
+<p><img src="/../../images/image-20220821133249121.png" alt="image-20220821133249121"></p>
+<p>进入loadBeanDefinitions：</p>
+<p><img src="/../../images/image-20220821133441009.png" alt="image-20220821133441009"></p>
+<p>我们可以通过一行行dubug，查看哪一行使得beanDefinitionNames的值改变了，就表明在这里创建的beanDefinition。</p>
+<p>其实通过函数名也能够知道在最后一行完成的beanDefinition创建</p>
+<p><img src="/../../images/image-20220821134129560.png" alt="image-20220821134129560"></p>
+<p>进入这一个loadBeanDefinitions（方法重载），这里传入了上一个方法的对象，上一个对象是xml配置文件的一个reader</p>
+<p><img src="/../../images/image-20220821135250773.png" alt="image-20220821135250773"></p>
+<p>这个loadBeanDefinitions，是获取一些配置信息和我们的配置文件的地址，这里要注意，后面这个beanFactory对象和regisitry是差不多的一个东西。</p>
+<p>然后会在reader里面的loadBeanDefinitions方法，这个方法完成了beanDefinition创建。</p>
+<p>进入reader.loadBeanDefinitions方法：这里面传入的就是我们applicaitonContext.xml文件</p>
+<p><img src="/../../images/image-20220821135931060.png" alt="image-20220821135931060"></p>
+<p>这个for循环会遍历我们的配置文件，然后又调用一个loadBeanDefinitions来完成BeanDefinition的创建</p>
+<p>进入这个loadBeanDefinitions</p>
+<p><img src="/../../images/image-20220821145752266.png" alt="image-20220821145752266"></p>
+<p>又一个loadBeanDefinitions，进入</p>
+<p><img src="/../../images/image-20220821150327032.png" alt="image-20220821150327032"></p>
+<p>又一个loadBeanDefinitions，进入</p>
+<p><img src="/../../images/image-20220821150418335.png" alt="image-20220821150418335"></p>
+<p>又一个loadBeanDefinitions，进入</p>
+<p><img src="/../../images/image-20220821150447769.png" alt="image-20220821150447769"></p>
+<p>终于不是loadBeanDefinitions，这里传入了一个资源参数，这个资源就是我们的xml配置问文件，创建输入流读取这个配置文件，然后传入doLoadBeanDefinitions</p>
+<p><img src="/../../images/image-20220821150647584.png" alt="image-20220821150647584"></p>
+<p>进入doLoadBeanDefinitions：</p>
+<p><img src="/../../images/image-20220821150832093.png" alt="image-20220821150832093"></p>
+<p>进入registerBeanDifitions:<br><img src="/../../images/image-20220821150949423.png" alt="image-20220821150949423"></p>
+<p>先创建了一个document读取器，通过这个读取器去种族测BeanDefiintion，参数为document对象和读取xml配置文件的上下文管理对象。</p>
+<p>进入registerBeanDifitions：</p>
+<p><img src="/../../images/image-20220821151237025.png" alt="image-20220821151237025"></p>
+<p>不用看肯定是doRegisterBeanDefinitions</p>
+<p>进入doRegisterBeanDefinitions：</p>
+<p><img src="/../../images/image-20220821152523909.png" alt="image-20220821152523909"></p>
+<p>root参数就是对应我们xml配置文件中的beans标签</p>
+<p><img src="/../../images/image-20220821152624539.png" alt="image-20220821152624539"></p>
+<p>这里就是解析root中beans标签的方法，pre和post表示是可以自己拓展的一些操作。</p>
+<p>进入parseBeanDefinitions：</p>
+<p><img src="/../../images/image-20220821153210273.png" alt="image-20220821153210273"></p>
+<p>这里肯定是bean标签</p>
+<p><img src="/../../images/image-20220821153317110.png" alt="image-20220821153317110"></p>
+<p>进入processBeanDefinitions：</p>
+<p><img src="/../../images/image-20220821153506887.png" alt="image-20220821153506887"></p>
+<p>这里会先创建一个BeanDefinitionHolder对象</p>
+<p><img src="/../../images/image-20220821153848454.png" alt="image-20220821153848454"></p>
+<p>这里面会包含我们需要的beanDefinition信息，这些其实都是我们的xml配置文件中配置bean的一些属性，class、scope….，所以我们需要看这个方法。</p>
+<p>进入parseBeanDefinitionsElement，他会调用一个parseBeanDefinitionElement方法</p>
+<p>进入parseBeanDefinitionElement：</p>
+<p><img src="/../../images/image-20220821154734867.png" alt="image-20220821154734867"></p>
+<p><img src="/../../images/image-20220821155643886.png" alt="image-20220821155643886"></p>
+<p>下面会创建一个AbstractBeanDefinition，</p>
+<p><img src="/../../images/image-20220821155721938.png" alt="image-20220821155721938"></p>
+<p>这是BeanDfinnition的实现类</p>
+<p>进入parseBeanDefinitionElement，这个方法内部实际上就是在解析xml的标签，</p>
+<p><img src="/../../images/image-20220821155957245.png" alt="image-20220821155957245"></p>
+<p>把xml中读取到的内容用于创建BeanDefinition</p>
+<p><img src="/../../images/image-20220821160300969.png" alt="image-20220821160300969"></p>
+<p>后续都是同样的操作通过解析配置文件设置对应的值，只要就是在这里创建出了BeanDefiniitons</p>
+<ul>
+<li>开篇</li>
+</ul>
+<p><img src="/../../images/image-20220821160808298.png" alt="image-20220821160808298"></p>
+<ul>
+<li>结论：BeanDefinition会随着Spring容器加载时，创建的doFactory对象调用XmlBeanDefinitionReader对象，读取我们的xml配置文件，将读取到的属性值存入BeanDefinition中，所以BeanDefinition就是用于存放xml中bean的属性值的。</li>
+</ul>
+<h1 id="BeanDefinition的存储"><a href="#BeanDefinition的存储" class="headerlink" title="BeanDefinition的存储"></a>BeanDefinition的存储</h1><p>上面我们主要探究创建BeanDefinition主要在这个方法里</p>
+<p><img src="/../../images/image-20220821162631185.png" alt="image-20220821162631185"></p>
+<p>既然创建了那后续要使用它肯定需要去进行存储，创建在这当然后续的就是在完成存储。</p>
+<p><img src="/../../images/image-20220821162924833.png" alt="image-20220821162924833"></p>
+<p>BeanDefinitionRegistry，完成了beanDefinition的登记：</p>
+<p><img src="/../../images/image-20220821163340508.png" alt="image-20220821163340508"></p>
+<p>获取xml中的名字，然后definitionHolder中有beanDefinition的值，通过getBeanDefinition()获得</p>
+<p><img src="/../../images/image-20220821163434790.png" alt="image-20220821163434790"></p>
+<p>registy实际上就是我们的beanFactory对象，所以通过它去完成存储BeanDefinition，</p>
+<p>进入registerBeanDefinition方法：</p>
+<p><img src="/../../images/image-20220821163842946.png" alt="image-20220821163842946"></p>
+<p>可以看到beanFactory中有一个beanDefinitionMap的map集合，所以肯定是通过这个集合完成的存储，先判断是不是存在这个bean名字，然后再存入，</p>
+<p><img src="/../../images/image-20220821164022646.png" alt="image-20220821164022646"></p>
+<p>键就是我们xml配置文件中的 id ，值就是。</p>
+<p>结论：beanDefinition会被存入beanFactory的beanDefinitionMap集合中。</p>
+</font></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/">https://yimeng436.github.io/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/20/MybatisPlus/MybatisPlus/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MybatisPlus</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/14/SpringBoot/SpringBoot/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/04/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/" title="多态例题"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-04</div><div class="title">多态例题</div></div></a></div><div><a href="/2022/06/06/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/" title="自动拆装箱"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">自动拆装箱</div></div></a></div><div><a href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">多线程</div></div></a></div><div><a href="/2022/06/30/JavaWeb/JavaWeb/" title="JavaWeb"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">JavaWeb</div></div></a></div><div><a href="/2022/07/25/Mybatis/Mybatis/" title="Mybatis"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-25</div><div class="title">Mybatis</div></div></a></div><div><a href="/2022/07/26/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" title="注解和反射"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-26</div><div class="title">注解和反射</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring%E5%AE%B9%E5%99%A8%E4%B8%ADBean%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">Spring容器中Bean的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Bean%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">获取Bean对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BeanDefinition-%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">3.</span> <span class="toc-text">BeanDefinition 的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BeanDefinition%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">4.</span> <span class="toc-text">BeanDefinition的存储</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/22/Redis/Redis/" title="Redis"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Redis"/></a><div class="content"><a class="title" href="/2022/08/22/Redis/Redis/" title="Redis">Redis</a><time datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/MybatisPlus/MybatisPlus/" title="MybatisPlus"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="MybatisPlus"/></a><div class="content"><a class="title" href="/2022/08/20/MybatisPlus/MybatisPlus/" title="MybatisPlus">MybatisPlus</a><time datetime="2022-08-19T16:00:00.000Z" title="发表于 2022-08-20 00:00:00">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/" title="SpringBoot源码"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="SpringBoot源码"/></a><div class="content"><a class="title" href="/2022/08/19/SpringBoot%E6%BA%90%E7%A0%81/SpringBoot%E6%BA%90%E7%A0%81/" title="SpringBoot源码">SpringBoot源码</a><time datetime="2022-08-18T16:00:00.000Z" title="发表于 2022-08-19 00:00:00">2022-08-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

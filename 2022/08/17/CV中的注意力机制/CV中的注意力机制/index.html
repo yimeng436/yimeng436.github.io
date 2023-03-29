@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CV中的注意力机制 | 异梦的博客</title><meta name="keywords" content="深度学习"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CV-attention">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CV中的注意力机制">
+<meta property="og:url" content="https://yimeng436.github.io/2022/08/17/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="CV-attention">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-08-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-21T04:11:35.955Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/08/17/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CV中的注意力机制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-21 12:11:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CV中的注意力机制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-16T16:00:00.000Z" title="发表于 2022-08-17 00:00:00">2022-08-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-21T04:11:35.955Z" title="更新于 2022-11-21 12:11:35">2022-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CV中的注意力机制"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=5>CV中的注意力机制</font></center></strong></p>
+<h1 id="什么是注意力机制"><a href="#什么是注意力机制" class="headerlink" title="什么是注意力机制"></a>什么是注意力机制</h1><p>注意力机制就是让网络在训练时，更加关注于那些我们希望关注的部分，我们又无法直接在训练时依次指定哪些是我们希望网络更加关注的部分，所以就需要用自学习的方式让网络自适应去注意那些物体。<strong>在CV中，对于注意力机制无非就是希望网络注意到图片中的目标。 对于那些需要注意的部分网络为其赋予更大的权值，不需要注意的赋予较小的权值来实现。</strong></p>
+<p>简单分类，在cv中主要包括三种：<strong>通道注意力机制，空间注意力机制，以及二者结合</strong> </p>
+<p>注意力机制中典型的网络包括：SENet，CBAM，ECA等等。</p>
+<h1 id="SENet"><a href="#SENet" class="headerlink" title="SENet"></a>SENet</h1><p>SENet是一个经典的通道注意力机制的实现，其最主要的思想就是对于输入进来的feature，假设shape为：[b,c,w,h]，</p>
+<ul>
+<li>SENet在每一个通道上都采用一次全军平均池化，让 w，h全都变成了1，shape变为[b,c,1,1]的长条</li>
+<li>然后对这个长条经过两次全连接，第一次全连接神经元个数较少，第二次恢复到输入的通道数的大小，</li>
+<li>再利用一个sigmod 激活，得到的每一个值都在0-1之间表示对于输入的feature，每一个通道的权值，权值越大表示越需要被注意，</li>
+<li>最后将输入乘上这个权值就完成了SENet的构建。</li>
+</ul>
+<p><img src="/../../images/image-20221121113214075.png" alt="image-20221121113214075"></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SENet</span>(nn.Module):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,channel,ratio=<span class="number">16</span></span>):</span><br><span class="line">        <span class="comment">#channel 表示输入的神经元的个数</span></span><br><span class="line">        <span class="comment">#ratio 表示中间较小的全连接的神经元的比例</span></span><br><span class="line">        <span class="built_in">super</span>(SENet, self).__init__()</span><br><span class="line">        self.avg_pool = nn.AdaptiveAvgPool2d(<span class="number">1</span>)</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(channel,channel//ratio,bias=<span class="literal">False</span>),</span><br><span class="line">            nn.ReLU(inplace=<span class="literal">True</span>),</span><br><span class="line">            nn.Linear(channel//ratio,channel,bias=<span class="literal">False</span>),</span><br><span class="line">            nn.Sigmoid()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        b,c,_,_ = x.size()</span><br><span class="line">        <span class="comment">#b,c,w,h --&gt; b,c,1,1</span></span><br><span class="line">        avg = self.avg_pool(x)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#去掉 后面两个为1的维度</span></span><br><span class="line">        avg = avg.view(b,c)</span><br><span class="line">        <span class="comment">#b,c---&gt; b,c//ration --&gt; b,c</span></span><br><span class="line">        out = self.fc(avg)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#恢复到输入的shape，b,c--&gt;b,c,1,1</span></span><br><span class="line">        out = out.view(b,c,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> out*x</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="CBAM"><a href="#CBAM" class="headerlink" title="CBAM"></a>CBAM</h1><p>CBAM是结合了空间和通道注意力机制的典型实现，通道注意力机制是在每一个通道上进行全局池化，而空间注意力机制就是在每一个像素点上进行一些操作。</p>
+<p>通道注意力机制将输入的feature变为一个长条，而空间注意力机制在每一个点上，那么多通道中取最大或者平均，相当于将输入压扁。</p>
+<p><strong>CBAM：他先通过通道注意力机制得到一个输入乘权重，再通过空间注意力机制得到一个输入乘权重</strong></p>
+<p><img src="/../../images/image-20221121113855246.png" alt="image-20221121113855246"></p>
+<p>上部分为通道注意力机制，下半部分是空间注意力机制。</p>
+<ul>
+<li>通道注意力机制<ul>
+<li>分别通过最大和平均全局池化得到两个特征长条，两个长条相加，结果经过两次全连接（先相加和先全连接没太大的区别）再有sigmod将数值调整到0-1之间，乘上输入feature</li>
+</ul>
+</li>
+<li>空间注意力机制<ul>
+<li>在每一个像素点上分别取avg和max得到两个b,1,w,h的feature，将两个feature进行堆叠，再经过一个卷积调整通道数为2–&gt;1，再对结果进行一个sigmod，得到权重值，乘上输入feature</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">channel_attention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,channel,ratio=<span class="number">16</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(channel_attention, self).__init__()</span><br><span class="line"></span><br><span class="line">        self.avg_pool = nn.AdaptiveAvgPool2d(<span class="number">1</span>)</span><br><span class="line">        self.max_pool = nn.AdaptiveMaxPool2d(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#1X1卷积代替Linear</span></span><br><span class="line">        self.fc1 = nn.Conv2d(channel,channel//ratio,biais=<span class="literal">False</span>)</span><br><span class="line">        self.relu1 = nn.ReLU()</span><br><span class="line">        self.fc2 = nn.Conv2d(channel//ratio,channel,biais=<span class="literal">False</span>)</span><br><span class="line">        self.sigmod = nn.Sigmoid()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        avg = self.avg_pool(x)</span><br><span class="line">        <span class="built_in">max</span> = self.max_pool(x)</span><br><span class="line">        out = avg+<span class="built_in">max</span></span><br><span class="line">        out = self.fc1(out)</span><br><span class="line">        out = self.relu1(out)</span><br><span class="line">        out = self.fc2(out)</span><br><span class="line">        out = self.sigmod(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">spatial_attention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,kernel_size=<span class="number">7</span></span>):</span><br><span class="line">        <span class="comment"># kernel_size 卷积核大小</span></span><br><span class="line">        <span class="built_in">super</span>(spatial_attention, self).__init__()</span><br><span class="line">        padding = <span class="number">3</span> <span class="keyword">if</span> kernel_size == <span class="number">7</span> <span class="keyword">else</span> <span class="number">1</span></span><br><span class="line">        self.con = nn.Conv2d(<span class="number">2</span>,<span class="number">1</span>,kernel_size,padding,bias=<span class="literal">False</span>)</span><br><span class="line">        self.sigmod = nn.Sigmoid()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        avg = torch.mean(x,dim=<span class="number">1</span>,keepdim=<span class="literal">True</span>)</span><br><span class="line">        <span class="built_in">max</span> = torch.<span class="built_in">max</span>(x,dim=<span class="number">1</span>,keepdim=<span class="literal">True</span>)</span><br><span class="line">        out = torch.cat([avg,<span class="built_in">max</span>],dim=<span class="number">1</span>)</span><br><span class="line">        out = self.con(out)</span><br><span class="line"></span><br><span class="line">        out = self.sigmod(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CBAM</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,channel,ratio=<span class="number">8</span>,kernel_size=<span class="number">7</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(CBAM, self).__init__()</span><br><span class="line"></span><br><span class="line">        self.channel_att = channel_attention(channel,ratio)</span><br><span class="line">        self.spatial_att = spatial_attention(kernel_size)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        x = x * self.channel_att(x)</span><br><span class="line">        x = x * self.spatial_att(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>注意力机制是一个即插即用的模块，理论上可以用在任何一个feature后面，但是由于注意力机制一开始也是随机初始化的，所以一般不建议使用再主干特征网络中，以防破坏基础特征结构。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/08/17/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">https://yimeng436.github.io/2022/08/17/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/CV%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/19/Go/Go/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Go</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/14/SpringBoot/SpringBoot/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/06/MNIST/MNIST/" title="MNIST"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">MNIST</div></div></a></div><div><a href="/2022/06/06/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD/" title="前向传播"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">前向传播</div></div></a></div><div><a href="/2022/06/06/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="卷积神经网络"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">卷积神经网络</div></div></a></div><div><a href="/2022/06/06/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/" title="梯度下降算法"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">梯度下降算法</div></div></a></div><div><a href="/2022/06/06/tensorflow/tensorflow/" title="tensorflow"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">tensorflow</div></div></a></div><div><a href="/2022/06/15/PyTorch/PyTorch/" title="PyTorch"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">PyTorch</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text">什么是注意力机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SENet"><span class="toc-number">2.</span> <span class="toc-text">SENet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CBAM"><span class="toc-number">3.</span> <span class="toc-text">CBAM</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Netty/Netty/" title="Netty"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Netty"/></a><div class="content"><a class="title" href="/2022/08/25/Netty/Netty/" title="Netty">Netty</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/Nginx/nginx/" title="Nginx"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/08/23/Nginx/nginx/" title="Nginx">Nginx</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/22/Redis/Redis/" title="Redis"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Redis"/></a><div class="content"><a class="title" href="/2022/08/22/Redis/Redis/" title="Redis">Redis</a><time datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

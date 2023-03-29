@@ -1,0 +1,486 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>函数式编程 | 异梦的博客</title><meta name="keywords" content="Java"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="函数式编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式编程">
+<meta property="og:url" content="https://yimeng436.github.io/2022/08/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="函数式编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-08-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-04T05:18:12.824Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/08/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '函数式编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-04 13:18:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">函数式编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-13T16:00:00.000Z" title="发表于 2022-08-14 00:00:00">2022-08-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-04T05:18:12.824Z" title="更新于 2023-03-04 13:18:12">2023-03-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="函数式编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=5>函数式编程</font></center></strong></p>
+<h1 id="函数式编程的思想"><a href="#函数式编程的思想" class="headerlink" title="函数式编程的思想"></a>函数式编程的思想</h1><p>面向对象的思想需要关注用什么对象完成什么事情，而函数式编程思想类似于数学里面的函数，他关注的式对数据做了什么操作。不关心谁调用的，不关心方法名字，只关心对数据的操作。</p>
+<h1 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h1><p>函数式接口：如果一个接口只包含唯一一个抽象方法(<strong>JDK1.8之后可以包含非抽象方法，这里只看抽象方法</strong>)，那么他就是一个函数式接口。</p>
+<p>最初：一个接口，一个实现类，只使用一次。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zyh.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testlamda</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Test_lamda</span> <span class="variable">tes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">lamda</span>();</span><br><span class="line">        tes.test_lamda();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义函数式接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">lamda</span> <span class="keyword">implements</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;test_lamda&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>由于这个类不会单独使用，所以可以将其声明为一个成员内部类，但是又有可能需要定义静态的方法和 成员所以，将类声明为一个静态内部类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zyh.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testlamda</span> &#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">lamda</span> <span class="keyword">implements</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;test_lamda&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Test_lamda</span> <span class="variable">tes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">lamda</span>();</span><br><span class="line">        tes.test_lamda();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义函数式接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>还可以进一步简化就变成局部内部类，直接将类定义在方法体中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zyh.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testlamda</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Test_lamda</span> <span class="variable">tes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">lamda</span>();</span><br><span class="line">        tes.test_lamda();</span><br><span class="line">        <span class="keyword">class</span> <span class="title class_">lamda</span> <span class="keyword">implements</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;test_lamda&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数式接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>采用匿名内部类进一步简化，匿名内部类对象的类型是接口或者父类，借助接口或者父类来实例化对象，new 接口&#x2F;父类，当为接口时需要重写接口方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zyh.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testlamda</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Test_lamda</span> <span class="variable">tes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test_lamda</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;test_lamda 匿名内部类&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        tes.test_lamda();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义函数式接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后根据lamda进行简化，由于对象的类型是接口或者父类，当为接口时，根据函数式接口的定义，使用lamda表达式时，要求接口为函数式接口，只保留匿名内部类的<strong>（） {函数体}<strong>，并用</strong>-&gt;</strong> 进行指向。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zyh.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">testlamda</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Test_lamda</span> <span class="variable">tes</span> <span class="operator">=</span> ()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;lamda方法&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        tes.test_lamda();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数式接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Test_lamda</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test_lamda</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">cal</span><span class="params">(IntBinaryOperator operator)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> operator.applyAsInt(a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在要求只要能够调用这个方法，IntBinaryOperator是一个接口，里面只有一个方法，applyAsInt。</p>
+<ul>
+<li>匿名内部类的写法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先要调用这个方法</span></span><br><span class="line">cal();</span><br><span class="line"></span><br><span class="line"><span class="comment">//cal 方法需要一个IntBinaryOperator类型的参数，但是他又是一个接口</span></span><br><span class="line"><span class="comment">//所以要用匿名内部类传入一个IntBinaryOperator的实现类</span></span><br><span class="line">cal(<span class="keyword">new</span> <span class="title class_">IntBinaryOperator</span>());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//IntBinaryOperator是一个接口所以还要重写它的方法</span></span><br><span class="line">cal(<span class="keyword">new</span> <span class="title class_">IntBinaryOperator</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">applyAsInt</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//这样调用cal方法时候，cal方法里面的operator.applyAsInt(a,b);</span></span><br><span class="line"><span class="comment">//就会变成调用实现类的方法。 </span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>优化为lambda表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//lambda表达式基本格式就是 (参数列表)-&gt;&#123;方法体&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数列表就是接口中方法的参数，方法体就是方法实现</span></span><br><span class="line"></span><br><span class="line">cal((<span class="type">int</span> c, <span class="type">int</span> d) -&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> c + d;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;R&gt; R <span class="title function_">typeConver</span><span class="params">(Function&lt;String,R&gt; function)</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;jajaj&quot;</span>;</span><br><span class="line">    <span class="type">R</span> <span class="variable">result</span> <span class="operator">=</span> function.apply(s);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>匿名内部类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typeConver(<span class="keyword">new</span> <span class="title class_">Function</span>&lt;String, String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">apply</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> s+<span class="string">&quot;convering&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>lambda表达式：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeConver((String s) -&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> s + <span class="string">&quot;convering&quot;</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>相比之下，lambda表达式明显更简洁，并且很明显lambda表达式不关心你是什么类型的，只关心参数和操作。</p>
+<h1 id="Stream-流"><a href="#Stream-流" class="headerlink" title="Stream 流"></a>Stream 流</h1><p>这是函数式编程中最常用的操作，它可以操作集合和数组</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@EqualsAndHashCode</span><span class="comment">//用于后期的去重使用</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Author</span> &#123;</span><br><span class="line">    <span class="comment">//id</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="comment">//简介</span></span><br><span class="line">    <span class="keyword">private</span> String intro;</span><br><span class="line">    <span class="comment">//作品</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Book&gt; books;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@EqualsAndHashCode</span><span class="comment">//用于后期的去重使用</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Book</span> &#123;</span><br><span class="line">    <span class="comment">//id</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="comment">//书名</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//分类</span></span><br><span class="line">    <span class="keyword">private</span> String category;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//评分</span></span><br><span class="line">    <span class="keyword">private</span> Integer score;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//简介</span></span><br><span class="line">    <span class="keyword">private</span> String intro;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;Author&gt; <span class="title function_">getAuthors</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//数据初始化</span></span><br><span class="line">    <span class="type">Author</span> <span class="variable">author</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Author</span>(<span class="number">1L</span>,<span class="string">&quot;蒙多&quot;</span>,<span class="number">33</span>,<span class="string">&quot;一个从菜刀中明悟哲理的祖安人&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">    <span class="type">Author</span> <span class="variable">author2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Author</span>(<span class="number">2L</span>,<span class="string">&quot;亚拉索&quot;</span>,<span class="number">15</span>,<span class="string">&quot;狂风也追逐不上他的思考速度&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">    <span class="type">Author</span> <span class="variable">author3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Author</span>(<span class="number">3L</span>,<span class="string">&quot;易&quot;</span>,<span class="number">14</span>,<span class="string">&quot;是这个世界在限制他的思维&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">    <span class="type">Author</span> <span class="variable">author4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Author</span>(<span class="number">3L</span>,<span class="string">&quot;易&quot;</span>,<span class="number">14</span>,<span class="string">&quot;是这个世界在限制他的思维&quot;</span>,<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//书籍列表</span></span><br><span class="line">    List&lt;Book&gt; books1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    List&lt;Book&gt; books2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    List&lt;Book&gt; books3 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    books1.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">1L</span>,<span class="string">&quot;刀的两侧是光明与黑暗&quot;</span>,<span class="string">&quot;哲学,爱情&quot;</span>,<span class="number">88</span>,<span class="string">&quot;用一把刀划分了爱恨&quot;</span>));</span><br><span class="line">    books1.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">2L</span>,<span class="string">&quot;一个人不能死在同一把刀下&quot;</span>,<span class="string">&quot;个人成长,爱情&quot;</span>,<span class="number">99</span>,<span class="string">&quot;讲述如何从失败中明悟真理&quot;</span>));</span><br><span class="line"></span><br><span class="line">    books2.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">3L</span>,<span class="string">&quot;那风吹不到的地方&quot;</span>,<span class="string">&quot;哲学&quot;</span>,<span class="number">85</span>,<span class="string">&quot;带你用思维去领略世界的尽头&quot;</span>));</span><br><span class="line">    books2.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">3L</span>,<span class="string">&quot;那风吹不到的地方&quot;</span>,<span class="string">&quot;哲学&quot;</span>,<span class="number">85</span>,<span class="string">&quot;带你用思维去领略世界的尽头&quot;</span>));</span><br><span class="line">    books2.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">4L</span>,<span class="string">&quot;吹或不吹&quot;</span>,<span class="string">&quot;爱情,个人传记&quot;</span>,<span class="number">56</span>,<span class="string">&quot;一个哲学家的恋爱观注定很难把他所在的时代理解&quot;</span>));</span><br><span class="line"></span><br><span class="line">    books3.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">5L</span>,<span class="string">&quot;你的剑就是我的剑&quot;</span>,<span class="string">&quot;爱情&quot;</span>,<span class="number">56</span>,<span class="string">&quot;无法想象一个武者能对他的伴侣这么的宽容&quot;</span>));</span><br><span class="line">    books3.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">6L</span>,<span class="string">&quot;风与剑&quot;</span>,<span class="string">&quot;个人传记&quot;</span>,<span class="number">100</span>,<span class="string">&quot;两个哲学家灵魂和肉体的碰撞会激起怎么样的火花呢？&quot;</span>));</span><br><span class="line">    books3.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="number">6L</span>,<span class="string">&quot;风与剑&quot;</span>,<span class="string">&quot;个人传记&quot;</span>,<span class="number">100</span>,<span class="string">&quot;两个哲学家灵魂和肉体的碰撞会激起怎么样的火花呢？&quot;</span>));</span><br><span class="line"></span><br><span class="line">    author.setBooks(books1);</span><br><span class="line">    author2.setBooks(books2);</span><br><span class="line">    author3.setBooks(books3);</span><br><span class="line">    author4.setBooks(books3);</span><br><span class="line"></span><br><span class="line">    List&lt;Author&gt; authorList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(author,author2,author3,author4));</span><br><span class="line">    <span class="keyword">return</span> authorList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><ul>
+<li><p>需求要找到年龄小于18 的作家的名字且去重。</p>
+</li>
+<li><p>传统写法：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    List&lt;Author&gt; authors = getAuthors();</span><br><span class="line">    <span class="comment">//开始遍历 authors,判断集合里的作者的年龄，去重可能会考虑再创建一个set集合</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>传统写法很难避免大量的  <strong>if语句和for语句的嵌套</strong> ，导致代码可读性降低。</p>
+<ul>
+<li>Stream流写法</li>
+</ul>
+<p>Stream 流可以用来操作数组和集合，可以将数组和集合先变成一个个流数据便于我们的处理，变成流数据也只需要通过一个stream方法就能够实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    List&lt;Author&gt; authors = getAuthors();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    authors.stream()			<span class="comment">//集合转为Stream流</span></span><br><span class="line">            .distinct()			<span class="comment">//去重</span></span><br><span class="line">            .filter(<span class="keyword">new</span> <span class="title class_">Predicate</span>&lt;Author&gt;() &#123;	<span class="comment">//筛选，先通过匿名内部类的形式，重写筛选条件</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">test</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> author.getAge()&lt;<span class="number">18</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .forEach(<span class="keyword">new</span> <span class="title class_">Consumer</span>&lt;Author&gt;() &#123;		<span class="comment">//遍历，同样先通过匿名内部类的形式</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">                    System.out.println(author.getName());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//转成匿名lambda表达式</span></span><br><span class="line">authors.stream()</span><br><span class="line">    .distinct()</span><br><span class="line">    .filter(author -&gt; author.getAge()&lt;<span class="number">18</span>)</span><br><span class="line">    .forEach(author -&gt; System.out.println(author.getName()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><h3 id="创建操作"><a href="#创建操作" class="headerlink" title="创建操作"></a>创建操作</h3><p>上面我们说过Stream流是用于操作数据和集合的，所以对数组和集合都有各自的创建方式。</p>
+<ul>
+<li>单列集合： 集合对象.stream()</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Author&gt; authors = getAuthors();</span><br><span class="line">authors.stream();</span><br><span class="line"></span><br><span class="line">Set&lt;Author&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">set.stream();</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>数组  Arrays.stream()；Stream.of()</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Author[] authors1 = <span class="keyword">new</span> <span class="title class_">Author</span>[<span class="number">2</span>];</span><br><span class="line">Stream&lt;Author&gt; stream = Arrays.stream(authors1);</span><br><span class="line">Stream&lt;Author&gt; authors11 = Stream.of(authors1);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>双列集合 Map，要先转成单列集合再通过stream方法转成流</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">Stream&lt;Map.Entry&lt;String, String&gt;&gt; stream = map.entrySet().stream();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h3><p>将数组和集合转成流之后，我们需要对流中的数据进行一些操作，以达到我们的目的。</p>
+<ul>
+<li>filter</li>
+</ul>
+<p>过滤，将满足条件的流数据继续保留在流中。</p>
+<p>实际上就是每一个流数据都会经过filter 中的实现方法，进行筛选。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">    .filter(author -&gt; author.getAge()&lt;<span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>map</li>
+</ul>
+<p>可以对我们流数据中的内容的类型进行转换，转换后后面接着的流方法获取到的就都是转换后的类型了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">    .map(<span class="keyword">new</span> <span class="title class_">Function</span>&lt;Author, String&gt;() &#123;		<span class="comment">//将流中的Author对象转成 只保留姓名的String类型</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">apply</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> author.getName();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .forEach(<span class="keyword">new</span> <span class="title class_">Consumer</span>&lt;String&gt;() &#123;		<span class="comment">//获取到的就是String类型的流数据</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(String s)</span> &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//lambda</span></span><br><span class="line">authors.stream()</span><br><span class="line">    .map(a -&gt; a.getName())</span><br><span class="line">    .forEach(s -&gt; System.out.println(s));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>可以通过debug 查看 流式连每次发生的变化</p>
+<p><img src="/../../images/image-20230107151227562.png" alt="image-20230107151227562"></p>
+<p><img src="/../../images/image-20230107151235256.png" alt="image-20230107151235256"></p>
+<ul>
+<li>distinct</li>
+</ul>
+<p>去重操作，注意：这里的底层使用的是Object 的equals 方法进行判断的，所以相当于使用的是 <strong>“&#x3D;&#x3D;”</strong> 进行判断，只有当地址相同才算相同，所以当我们要操作自己的类的时候要重写equals方法。</p>
+<ul>
+<li>sorted</li>
+</ul>
+<p>排序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .distinct()</span><br><span class="line">        .sorted(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Author&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Author o1, Author o2)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> o2.getAge() - o1.getAge();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .forEach(author -&gt; &#123;</span><br><span class="line">            System.out.println(author);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//lambda</span></span><br><span class="line">authors.stream()</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted((o1,o2)-&gt;&#123;<span class="keyword">return</span> o2.getAge()-o1.getAge()&#125;)</span><br><span class="line">    .foreach(author-&#123;System.out.println(autho)&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>limit</li>
+</ul>
+<p>设置流的长度，比如说你现在流中有3 个元素，你只希望有两个就可以通过limit指定要几个元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted((o1,o2)-&gt;&#123;<span class="keyword">return</span> o2.getAge()-o1.getAge()&#125;)</span><br><span class="line">    .limit(<span class="number">2</span>)</span><br><span class="line">    .foreach(author-&#123;System.out.println(autho)&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>skip</li>
+</ul>
+<p>跳过前n个流元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted((o1,o2)-&gt;&#123;<span class="keyword">return</span> o2.getAge()-o1.getAge()&#125;)</span><br><span class="line">    .skip(<span class="number">1</span>)		<span class="comment">//跳过第一个</span></span><br><span class="line">    .foreach(author-&#123;System.out.println(autho)&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>flatMap</li>
+</ul>
+<p>如果现在我们要拿到所有作家的书籍，你可能会这么写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .map(author -&gt; author.getBooks())</span><br><span class="line">        .forEach(<span class="keyword">new</span> <span class="title class_">Consumer</span>&lt;List&lt;Book&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(List&lt;Book&gt; books)</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (Book book : books) &#123;</span><br><span class="line">                    System.out.println(book.getName());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在forEach中 再加上对 没一个作家的book集合的遍历。</p>
+<p>有了faltMap之后，你可以取代掉这种写法，map可以将一个流对象转为另一个类型，flatMap可以将一个流对象转为多个流对象。就比如说这里我们可以将一个作家经过flatMap转为对应的多本书的类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .flatMap(<span class="keyword">new</span> <span class="title class_">Function</span>&lt;Author, Stream&lt;Book&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Stream&lt;Book&gt; <span class="title function_">apply</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> author.getBooks().stream();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)			<span class="comment">//后面的都变成了 Book类型的流对象</span></span><br><span class="line">        .forEach(book -&gt; System.out.println(book.getName()));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//lambda</span></span><br><span class="line">authors.stream()</span><br><span class="line">    .flatMap(author -&gt; author.getBooks().stream())</span><br><span class="line">    .forEach(book -&gt; System.out.println(book.getName()));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<blockquote>
+<p>需求：要打印所有书籍的分类，并且去重，且如果出现一本书属于多个类别就要拆分成两种类别</p>
+<p>（爱情，神话）&#x3D;》爱情，神话两个类别</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .flatMap(author -&gt; author.getBooks().stream())	<span class="comment">//转成book的流</span></span><br><span class="line">    	<span class="comment">//因为存在一本书属于多个类别的，所以要进行拆分，拆分后得到的是字符串数组，所以就变成了对数组进行创			建流</span></span><br><span class="line">        .flatMap(book -&gt; Arrays.stream(book.getCategory().split(<span class="string">&quot;,&quot;</span>)))</span><br><span class="line">        .distinct()</span><br><span class="line">        .forEach(catogry-&gt;&#123;</span><br><span class="line">            System.out.println(catogry);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="终结操作"><a href="#终结操作" class="headerlink" title="终结操作"></a>终结操作</h3><p>在使用Stream流的时候，必须存在终结操作，不然所有中间操作都不会发生。</p>
+<ul>
+<li>forEach</li>
+</ul>
+<p>遍历所有stream 的内容。</p>
+<ul>
+<li>count</li>
+</ul>
+<p>计算所有stream的个数。</p>
+<ul>
+<li>max &#x2F; min</li>
+</ul>
+<p>取出流数据中的最大&#x2F;最小值，得到结果是一个optional的类型，可以用 get方法获取里面的内容。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得分最高的book</span></span><br><span class="line">System.out.println(authors.stream()</span><br><span class="line">        .flatMap(author -&gt; author.getBooks().stream())</span><br><span class="line">        .max((o1, o2) -&gt; o1.getScore() - o2.getScore()).get());</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<ul>
+<li>collect</li>
+</ul>
+<p>把当前流数据转换成一个集合（list，set，map）。</p>
+<ul>
+<li><ul>
+<li>list</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(authors.stream()</span><br><span class="line">        .map(author -&gt; author.getName())</span><br><span class="line">        .collect(Collectors.toList()));		<span class="comment">//一般使用Collectors中的静态方法，因为它的匿名内部类											太复杂了</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><ul>
+<li>set和list一样,使用toset就行了</li>
+</ul>
+</li>
+<li><ul>
+<li>map，需要指定怎么转成key，怎么转成value，所以toMap有两个参数，第一个参数是Key指定的规则，第二个参数是value指定的规则。两个参数都需要用匿名内部类或者lambda表达式来完成</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>需求：author 转成 map，姓名做key，书的集合做value</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;Book&gt;&gt; collect = authors.stream()</span><br><span class="line">        .collect(Collectors.toMap(<span class="keyword">new</span> <span class="title class_">Function</span>&lt;Author, String&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> String <span class="title function_">apply</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> author.getName();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="keyword">new</span> <span class="title class_">Function</span>&lt;Author, List&lt;Book&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> List&lt;Book&gt; <span class="title function_">apply</span><span class="params">(Author author)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> author.getBooks();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//lambda</span></span><br><span class="line">Map&lt;String, List&lt;Book&gt;&gt; collect = authors.stream()</span><br><span class="line">    .collect(Collectors.toMap(author -&gt; author.getName(), author -&gt; author.getBooks()));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>anyMatch</li>
+</ul>
+<p>只要流数据中有任意一个满足的就会返回true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .map(author -&gt; author.getAge())</span><br><span class="line">        .anyMatch(integer -&gt; integer &gt; <span class="number">29</span>)		<span class="comment">//任意大于29岁的作家就会返回true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>allMatch</li>
+</ul>
+<p>只有流数据中所有都满足给定条件才会返回true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">authors.stream()</span><br><span class="line">        .map(author -&gt; author.getAge())</span><br><span class="line">        .allMatch(integer -&gt; integer &gt; <span class="number">29</span>)		<span class="comment">//只有所有流数据年龄大于29岁才会返回true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>noneMatch</li>
+</ul>
+<p>所有都不符合条件 返回true</p>
+<ul>
+<li>reduce 归并</li>
+</ul>
+<p>对流数据按照指定的计算方式计算出一个结果。</p>
+<p>并且我们可以给输出结果赋一个初始值，然后再和流数据中的元素就行操作。相当于这么一个过程：</p>
+<p><img src="/../../images/image-20230108145316511.png" alt="image-20230108145316511"></p>
+<p>reduce 有三种重载形式</p>
+<p><img src="/../../images/image-20230108145652133.png" alt="image-20230108145652133"></p>
+<blockquote>
+<p>需求：用reduce对年龄求和</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(authors.stream()</span><br><span class="line">        .map(author -&gt; author.getAge())</span><br><span class="line">        .reduce(<span class="number">0</span>, (identity, i2) -&gt; identity + i2));	<span class="comment">//两个参数第一个是初始值，第二个是lambda表达式，有两个参数第一个是要返回的(初始值),第二个就是当前遍历到的元素，并且操作完之后会重新赋值给要返回的值(初始值)。</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h2><p>我们在写一些查询语句的时候，拿到查询的结果可能是空的，如果我们还要调用对象的方法就会出现空指针异常，所以我们会加上 if 去判断是否为空，但是如果对象多起来的话，if就会很多显得很乱，而且有些时候还可能会忘记加上。</p>
+<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>​	Optional就好像是包装类，可以把我们的具体数据封装Optional对象内部。然后我们去使用Optional中封装好的方法操作封装进去的数据就可以非常优雅的避免空指针异常。</p>
+<p>​	我们一般使用<strong>Optional</strong>的<strong>静态方法ofNullable</strong>来把数据封装成一个Optional对象。无论传入的参数是否为null都不会出现问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Author</span> <span class="variable">author</span> <span class="operator">=</span> getAuthor();</span><br><span class="line">Optional&lt;Author&gt; authorOptional = Optional.ofNullable(author);</span><br></pre></td></tr></table></figure>
+
+<p>而且在实际开发中我们的数据很多是从数据库获取的。Mybatis从3.5版本可以也已经支持Optional了。我们可以直接把dao方法的返回值类型定义成Optional类型，MyBastis会自己把数据封装成Optional对象返回。封装的过程也不需要我们自己操作。</p>
+<h4 id="安全消费值"><a href="#安全消费值" class="headerlink" title="安全消费值"></a>安全消费值</h4><p>​	我们获取到一个Optional对象后肯定需要对其中的数据进行使用。这时候我们可以使用其<strong>ifPresent</strong>方法对来消费其中的值。</p>
+<p>​	这个方法会判断其内封装的数据是否为空，不为空时才会执行具体的消费代码。这样使用起来就更加安全了。</p>
+<p>​	例如,以下写法就优雅的避免了空指针异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Author&gt; authorOptional = Optional.ofNullable(getAuthor());</span><br><span class="line"></span><br><span class="line">authorOptional.ifPresent(author -&gt; System.out.println(author.getName()));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h4><p>​	如果我们想获取值自己进行处理可以使用get方法获取，但是不推荐。因为当Optional内部的数据为空的时候会出现异常。</p>
+<h4 id="安全获取值"><a href="#安全获取值" class="headerlink" title="安全获取值"></a>安全获取值</h4><p>​	如果我们期望安全的获取值。我们不推荐使用get方法，而是使用Optional提供的以下方法。</p>
+<ul>
+<li><p>orElseGet</p>
+<p>获取数据并且设置数据为空时的默认值。如果数据不为空就能获取到该数据。如果为空则根据你传入的参数来创建对象作为默认值返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Author&gt; authorOptional = Optional.ofNullable(getAuthor());</span><br><span class="line"><span class="type">Author</span> <span class="variable">author1</span> <span class="operator">=</span> authorOptional.orElseGet(() -&gt; <span class="keyword">new</span> <span class="title class_">Author</span>());</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+<li><p>orElseThrow</p>
+<p>获取数据，如果数据不为空就能获取到该数据。如果为空则根据你传入的参数来创建异常抛出。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Author&gt; authorOptional = Optional.ofNullable(getAuthor());</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">Author</span> <span class="variable">author</span> <span class="operator">=</span> authorOptional.orElseThrow((Supplier&lt;Throwable&gt;) () -&gt; <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;author为空&quot;</span>));</span><br><span class="line">    System.out.println(author.getName());</span><br><span class="line">&#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">    throwable.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h4><p>​	我们可以使用filter方法对数据进行过滤。如果原本是有数据的，但是不符合判断，也会变成一个无数据的Optional对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Author&gt; authorOptional = Optional.ofNullable(getAuthor());</span><br><span class="line">authorOptional.filter(author -&gt; author.getAge()&gt;<span class="number">100</span>).ifPresent(author -&gt; System.out.println(author.getName()));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/08/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">https://yimeng436.github.io/2022/08/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/14/Linux/Linux/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/14/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">设计模式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/04/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/" title="多态例题"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-04</div><div class="title">多态例题</div></div></a></div><div><a href="/2022/06/06/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/" title="自动拆装箱"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">自动拆装箱</div></div></a></div><div><a href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">多线程</div></div></a></div><div><a href="/2022/06/30/JavaWeb/JavaWeb/" title="JavaWeb"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">JavaWeb</div></div></a></div><div><a href="/2022/07/25/Mybatis/Mybatis/" title="Mybatis"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-25</div><div class="title">Mybatis</div></div></a></div><div><a href="/2022/07/26/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" title="注解和反射"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-26</div><div class="title">注解和反射</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%9A%84%E6%80%9D%E6%83%B3"><span class="toc-number">1.</span> <span class="toc-text">函数式编程的思想</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">lambda 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A01"><span class="toc-number">2.1.</span> <span class="toc-text">练习1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A02"><span class="toc-number">2.2.</span> <span class="toc-text">练习2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stream-%E6%B5%81"><span class="toc-number">3.</span> <span class="toc-text">Stream 流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">3.1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-number">3.2.</span> <span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.</span> <span class="toc-text">常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.1.</span> <span class="toc-text">创建操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.2.</span> <span class="toc-text">中间操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%88%E7%BB%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.3.</span> <span class="toc-text">终结操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Optional"><span class="toc-number">3.4.</span> <span class="toc-text">Optional</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.4.0.1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%B6%88%E8%B4%B9%E5%80%BC"><span class="toc-number">3.4.0.2.</span> <span class="toc-text">安全消费值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-number">3.4.0.3.</span> <span class="toc-text">获取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-number">3.4.0.4.</span> <span class="toc-text">安全获取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4"><span class="toc-number">3.4.0.5.</span> <span class="toc-text">过滤</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Netty/Netty/" title="Netty"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Netty"/></a><div class="content"><a class="title" href="/2022/08/25/Netty/Netty/" title="Netty">Netty</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/Nginx/nginx/" title="Nginx"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/08/23/Nginx/nginx/" title="Nginx">Nginx</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/22/Redis/Redis/" title="Redis"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Redis"/></a><div class="content"><a class="title" href="/2022/08/22/Redis/Redis/" title="Redis">Redis</a><time datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

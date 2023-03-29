@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>NewCode_Java | 异梦的博客</title><meta name="keywords" content="Java"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="牛客Java题目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NewCode_Java">
+<meta property="og:url" content="https://yimeng436.github.io/2022/08/21/NewCod_Java/NewCod_Java/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="牛客Java题目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-08-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-01T13:50:13.510Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/08/21/NewCod_Java/NewCod_Java/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'NewCode_Java',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-01 21:50:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">NewCode_Java</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-20T16:00:00.000Z" title="发表于 2022-08-21 00:00:00">2022-08-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-01T13:50:13.510Z" title="更新于 2023-02-01 21:50:13">2023-02-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="NewCode_Java"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=5>NewCode_Java</center></center></strong></p>
+<p>**1、多重继承的概念在Java中实现是通过如下哪些？（） **</p>
+<p><strong>I. 扩展两个或多个类</strong></p>
+<p><strong>II. 扩展一个类并实现一个或多个接口。</strong></p>
+<p><strong>III. 实现两个或更多接口。</strong></p>
+<blockquote>
+<p> A 只有I &amp;II<br> B 只有II &amp; III<br> C  只有III<br> D  都是</p>
+</blockquote>
+<p><strong>答案：B。Java只支持单继承，实现多重继承三种方式：（1）直接实现多个接口 （2）扩展(extends)一个类然后</strong> <strong>实现一个或多个接口 （3）通过内部类去继承其他类</strong></p>
+<p><strong>2、通过HttpServletRequest. getParameter获取的参数.</strong></p>
+<blockquote>
+<p>A 总是采用UTF-8编码<br>B 总是采用lS08859-1编码<br>C 由客户端浏览器和Web容器配置共同决定编码<br>D 由服务器所在的操作系统决定编码</p>
+</blockquote>
+<p><strong>答案：C。编码格式由浏览器决定，浏览器根据html中指定的编码格式进行编码，tomcat根据指定的格式进行</strong> <strong>解码，另外get请求和post请求对编码格式的处理也是不同的</strong></p>
+<p><strong>3、根据以下代码段，下列说法中正确的是(  )。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>A 子类中一定能够继承和覆盖Parent类的m1方法<br>B 子类中一定能够继承和覆盖Parent类的m2方法<br>C 子类中一定能够继承和覆盖Parent类的m3方法<br>D 子类中一定能够继承和覆盖Parent类的m4方法</p>
+</blockquote>
+<p>答案：C。<img src="/../../images/image-20221224100535692.png" alt="image-20221224100535692"></p>
+<p><strong>没有权限修饰符的时候，就是default类型。public和protected都可以作用于子类，但在多态情况下，静态函数</strong> <strong>调用时编译和运行看左边，所以子父类存在同名静态函数访问的是父类，子类并不能覆盖父类的方法，所以选C</strong>。</p>
+<p><strong>4、根据以下接口和类的定义，要使代码没有语法错误，则类Hero中应该定义方法(  )。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Action</span>&#123; </span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span>; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Hero</span> <span class="keyword">implements</span> <span class="title class_">Action</span>&#123; <span class="comment">//…… &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>A private void fly(){}<br>B void fly(){}<br>C protected void fly(){}<br>D public void fly(){}</p>
+</blockquote>
+<p><strong>答案：D。接口方法默认是public abstract的，且实现该接口的类中对应的方法的可见性不能小于接口方法的可见性</strong>，<strong>因此也只能是public的。</strong></p>
+<p><strong>5、以下代码将打印出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123; </span><br><span class="line">    <span class="type">String</span> <span class="variable">classFile</span> <span class="operator">=</span> <span class="string">&quot;com.jd.&quot;</span>. replaceAll(<span class="string">&quot;.&quot;</span>, <span class="string">&quot;/&quot;</span>) + <span class="string">&quot;MyClass.class&quot;</span>;</span><br><span class="line">    System.out.println(classFile);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>A com. jd<br>B com&#x2F;jd&#x2F;MyClass.class<br>C &#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;MyClass.class<br>D com.jd.MyClass</p>
+</blockquote>
+<p><strong>答案：C。由于replaceAll方法的第一个参数是一个正则表达式，而”.”在正则表达式中表示任何字符，所以会把</strong>前<strong>面字符串的所有字符都替换成”&#x2F;“。如果想替换的只是”.”，那么久要写成” \\.”.</strong></p>
+<p><strong>6、下面哪段程序能够正确的实现了GBK编码字节流到UTF-8编码字节流的转换：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span>``[] src,dst;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>A dst&#x3D;String.fromBytes(src，”GBK”).getBytes(“UTF-8”)<br>B dst&#x3D;new String(src，”GBK”).getBytes(“UTF-8”)<br>C dst&#x3D;new String(“GBK”，src).getBytes()<br>D dst&#x3D;String.encode(String.decode(src，”GBK”))，”UTF-8” )</p>
+</blockquote>
+<p>答案：选B，先通过GBK编码还原字符串，在该字符串正确的基础上得到“UTF-8”所对应的字节串。String 没有<strong>fromBytes</strong> 和  <strong>encode</strong> 两个静态方法。</p>
+<p><strong>7、 servlet周期包含哪些：</strong></p>
+<blockquote>
+<p>A 初始化<br>B 销毁<br>C 请求处理<br>D 开始</p>
+</blockquote>
+<p>答案：ABC</p>
+<p><img src="/../../images/image-20221224101929705.png" alt="image-20221224101929705"></p>
+<p><strong>8、一个Java源程序文件中定义几个类和接口，则编译该文件后生成几个以.class为后缀的字节码文件。</strong></p>
+<blockquote>
+<p>正确<br>错误</p>
+</blockquote>
+<p><img src="/../../images/image-20230104130922753.png" alt="image-20230104130922753"></p>
+<p>9、以下哪种方式实现的单例是线程安全的</p>
+<blockquote>
+<p>A 枚举<br>B 静态内部类<br>C 双检锁模式<br>D 饿汉式</p>
+</blockquote>
+<p>答案：ABCD</p>
+<ul>
+<li>懒汉式（线程不安全）</li>
+</ul>
+<p><strong>实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getUniqueInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="literal">null</span>) &#123;</span><br><span class="line">            uniqueInstance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong> 先不创建实例，当第一次被调用时，再创建实例，所以被称为懒汉式。</p>
+<p><strong>优点：</strong> 延迟了实例化，如果不需要使用该类，就不会被实例化，节约了系统资源。</p>
+<p><strong>缺点：</strong> 线程不安全，多线程环境下，如果多个线程同时进入了 if (uniqueInstance &#x3D;&#x3D; null) ，若此时还未实例化，也就是uniqueInstance &#x3D;&#x3D; null，那么就会有多个线程执行 uniqueInstance &#x3D; new Singleton(); ，就会实例化多个实例；</p>
+<ul>
+<li>饿汉式（线程安全）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">uniqueInstance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getUniqueInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>说明：</strong> 先不管需不需要使用这个实例，直接先实例化好实例 (饿死鬼一样，所以称为饿汉式)，然后当需要使用的时候，直接调方法就可以使用了。</p>
+<p><strong>优点：</strong> 提前实例化好了一个实例，避免了线程不安全问题的出现。</p>
+<p><strong>缺点：</strong> 直接实例化好了实例，不再延迟实例化；若系统没有使用这个实例，或者系统运行很久之后才需要使用这个实例，都会操作系统的资源浪费。</p>
+<ul>
+<li>懒汉式（线程安全）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="title function_">singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title function_">getUinqueInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="literal">null</span>) &#123;</span><br><span class="line">            uniqueInstance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>说明：</strong> 实现和 线程不安全的懒汉式 几乎一样，唯一不同的点是，在get方法上 加了一把 锁。如此一来，多个线程访问，每次只有拿到锁的的线程能够进入该方法，避免了多线程不安全问题的出现。</p>
+<p><strong>优点：</strong> 延迟实例化，节约了资源，并且是线程安全的。</p>
+<p><strong>缺点：</strong> 虽然解决了线程安全问题，但是性能降低了。因为，即使实例已经实例化了，既后续不会再出现线程安全问题了，但是锁还在，每次还是只能拿到锁的线程进入该方使线程阻塞，等待时间过长。</p>
+<ul>
+<li>双重检查锁实现（线程安全）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getUniqueInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (uniqueInstance == <span class="literal">null</span>) &#123;</span><br><span class="line">                    uniqueInstance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>说明:</strong>  双重检查数相当于是改进了 线程安全的懒汉式。线程安全的懒汉式 的缺点是性能降低了，造成的原因是因为即使实例已经实例化，依然每次都会有锁。而现在，我们将锁的位置变了，并且多加了一个检查。 也就是，先判断实例是否已经存在，若已经存在了，则不会执行判断方法内的有锁方法了。 而如果，还没有实例化的时候，多个线程进去了，也没有事，因为里面的方法有锁，只会让一个线程进入最内层方法并实例化实例。如此一来，最多最多，也就是第一次实例化的时候，会有线程阻塞的情况，后续便不会再有线程阻塞的问题。</p>
+<p><strong>为什么使用 volatile 关键字修饰了 uniqueInstance 实例变量 ？</strong> </p>
+<p> uniqueInstance &#x3D; new Singleton(); 这段代码执行时分为三步：</p>
+<ol>
+<li>为 uniqueInstance 分配内存空间 </li>
+<li>初始化 uniqueInstance </li>
+<li>将 uniqueInstance 指向分配的内存地址</li>
+</ol>
+<p>正常的执行顺序当然是 1&gt;2&gt;3 ，但是由于 JVM 具有指令重排的特性，执行顺序有可能变成 1&gt;3&gt;2。<br>单线程环境时，指令重排并没有什么问题；多线程环境时，会导致有些线程可能会获取到还没初始化的实例。<br>例如：线程A 只执行了 1 和 3 ，此时线程B来调用 getUniqueInstance()，发现 uniqueInstance 不为空，便获取 uniqueInstance 实例，但是其实此时的 uniqueInstance 还没有初始化。</p>
+<p>解决办法就是加一个 volatile 关键字修饰 uniqueInstance ，volatile 会禁止 JVM 的指令重排，就可以保证多线程环境下的安全运行。</p>
+<p><strong>优点：</strong> 延迟实例化，节约了资源；线程安全；并且相对于 线程安全的懒汉式，性能提高了。</p>
+<p><strong>缺点：</strong> volatile 关键字，对性能也有一些影响。</p>
+<ul>
+<li>静态内部类实现（线程安全）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SingletonHolder</span> &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getUniqueInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>说明：</strong> 首先，当外部类 Singleton 被加载时，静态内部类 SingletonHolder 并没有被加载进内存。当调用 getUniqueInstance() 方法时，会运行 return SingletonHolder.INSTANCE;  ，触发了 SingletonHolder.INSTANCE ，此时静态内部类 SingletonHolder 才会被加载进内存，并且初始化 INSTANCE 实例，而且 JVM 会确保 INSTANCE 只被实例化一次。</p>
+<p><strong>优点：</strong> 延迟实例化，节约了资源；且线程安全；性能也提高了。</p>
+<ul>
+<li>枚举类实现（线程安全）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line"> </span><br><span class="line">    INSTANCE;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//添加自己需要的操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doSomeThing</span><span class="params">()</span> &#123;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>说明：</strong> 默认枚举实例的创建就是线程安全的，且在任何情况下都是单例。</p>
+<p><strong>优点：</strong> 写法简单，线程安全，天然防止反射和反序列化调用。</p>
+<ul>
+<li><strong>防止反序列化</strong><br><strong>序列化：</strong>把java对象转换为字节序列的过程；<br><strong>反序列化：</strong> 通过这些字节序列在内存中新建java对象的过程；<br><strong>说明：</strong> 反序列化 将一个单例实例对象写到磁盘再读回来，从而获得了一个新的实例。<br>我们要防止反序列化，避免得到多个实例。<br><strong>枚举类天然防止反序列化。</strong><br>其他单例模式 可以通过 重写 readResolve() 方法，从而防止反序列化，使实例唯一重写 readResolve() :</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Object <span class="title function_">readResolve</span><span class="params">()</span> <span class="keyword">throws</span> ObjectStreamException&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<p><strong>10、下面关于JAVA的垃圾回收机制，正确的是（ ）</strong></p>
+<blockquote>
+<p>A 当调用“System.gc()”来强制回收时，系统会立即回收垃圾<br>B 垃圾回收不能确定具体的回收时间<br>C 程序可明确地标识某个局部变量的引用不再被使用<br>D 程序可以显式地立即释放对象占有的内存</p>
+</blockquote>
+<p>答案：B</p>
+<p>java提供了一个系统级的线程，即垃圾回收器线程。用来对每一个分配出去的内存空间进行跟踪。当JVM空闲时，自动回收每块可能被回收的内存，GC是完全自动的，不能被强制执行。程序员最多只能用System.gc()来建议执行垃圾回收器回收内存，但是具体的回收时间，是不可知的。当对象的引用变量被赋值为null，可能被当成垃圾。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/08/21/NewCod_Java/NewCod_Java/">https://yimeng436.github.io/2022/08/21/NewCod_Java/NewCod_Java/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/21/Paper-CV_Transformer%E7%B3%BB%E5%88%97/Paper-CV_Transformer%E7%B3%BB%E5%88%97/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Paper-CV_Transformer系列</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/21/RabbitMQ/RabbitMQ/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringCloud</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/04/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/" title="多态例题"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-04</div><div class="title">多态例题</div></div></a></div><div><a href="/2022/06/06/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/" title="自动拆装箱"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">自动拆装箱</div></div></a></div><div><a href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">多线程</div></div></a></div><div><a href="/2022/06/30/JavaWeb/JavaWeb/" title="JavaWeb"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">JavaWeb</div></div></a></div><div><a href="/2022/07/25/Mybatis/Mybatis/" title="Mybatis"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-25</div><div class="title">Mybatis</div></div></a></div><div><a href="/2022/07/26/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" title="注解和反射"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-26</div><div class="title">注解和反射</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Netty/Netty/" title="Netty"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Netty"/></a><div class="content"><a class="title" href="/2022/08/25/Netty/Netty/" title="Netty">Netty</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/Nginx/nginx/" title="Nginx"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/08/23/Nginx/nginx/" title="Nginx">Nginx</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/22/Redis/Redis/" title="Redis"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Redis"/></a><div class="content"><a class="title" href="/2022/08/22/Redis/Redis/" title="Redis">Redis</a><time datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

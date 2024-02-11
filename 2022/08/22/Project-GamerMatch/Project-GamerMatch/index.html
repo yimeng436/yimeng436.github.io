@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Project | 异梦的博客</title><meta name="keywords" content="Java"><meta name="author" content="异梦"><meta name="copyright" content="异梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="GamerMatchSystem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Project">
+<meta property="og:url" content="https://yimeng436.github.io/2022/08/22/Project-GamerMatch/Project-GamerMatch/index.html">
+<meta property="og:site_name" content="异梦的博客">
+<meta property="og:description" content="GamerMatchSystem">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yimeng436.github.io/img/top.png">
+<meta property="article:published_time" content="2022-08-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:50:33.845Z">
+<meta property="article:author" content="异梦">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yimeng436.github.io/img/top.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yimeng436.github.io/2022/08/22/Project-GamerMatch/Project-GamerMatch/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Project',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-13 22:50:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/top.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">异梦的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Project</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-21T16:00:00.000Z" title="发表于 2022-08-22 00:00:00">2022-08-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-13T14:50:33.845Z" title="更新于 2023-07-13 22:50:33">2023-07-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Project"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong><center><font size=8>玩家匹配系统</font></center></strong></p>
+<p>系统和名字一样，希望通过这个系统能够让用户匹配到玩同一个游戏，或者是类似游戏的玩家。</p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p>1、用户有对应的标签，根据标签进行分类，如玩FPS游戏的，FPS游戏又包括子分类，还有就是手机游戏的、moba游戏的等。</p>
+<p>2、主动搜索：根据标签搜索其他的用户</p>
+<p>3、组队（创建房间&#x2F;队伍）：</p>
+<p>4、推荐系统</p>
+<p>….</p>
+<h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>前端：Vue3、Vite(打包工具)、Vant组件库</p>
+<p>后端：SpringBoot、Mybatis-Plus、Redis、多线程模拟..</p>
+<h1 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h1><h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><p>使用vite脚手架构建基础项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create vite</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>构建的结果</li>
+</ul>
+<p><img src="/../../images/image-20230510163239130.png" alt="image-20230510163239130"></p>
+<ul>
+<li>npm install 安装对应的依赖</li>
+</ul>
+<p><img src="/../../images/image-20230510163440546.png" alt="image-20230510163440546"></p>
+<p>脚手架搭建了基本的前端框架之后，就可以引入组件库vant。</p>
+<ul>
+<li>npm安装组件构建工具</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i unplugin-vue-components -D</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在vite配置文件中引入组件支持</li>
+</ul>
+<p><img src="/../../images/image-20230510164224122.png" alt="image-20230510164224122"></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Components</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/vite&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">VantResolver</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/resolvers&#x27;</span>;</span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="title function_">vue</span>(),</span><br><span class="line">    <span class="title class_">Components</span>(&#123;</span><br><span class="line">      <span class="attr">resolvers</span>: [<span class="title class_">VantResolver</span>()],</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<ul>
+<li>npm安装vant 组件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vant</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>配置完了之后就可以按需引入组件了，在main.ts中，main.ts就是项目的主入口。在这里就可以引入我们的组件</p>
+<p><img src="/../../images/image-20230510165551189.png" alt="image-20230510165551189"></p>
+<p>引入之后就可以在 Vue文件中的 template标签中写入自己想要使用的样式。</p>
+<p>找几个去试一下</p>
+<p><img src="/../../images/image-20230510165801155.png" alt="image-20230510165801155"></p>
+<ul>
+<li>App.Vue</li>
+</ul>
+<p><img src="/../../images/image-20230510165908157.png" alt="image-20230510165908157"></p>
+<ul>
+<li>启动项目，就能看到template里面的内容</li>
+</ul>
+<p><img src="/../../images/image-20230510170011174.png" alt="image-20230510170011174"></p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>设计：此次我们做成一个移动端的界面，可以根据：F12工具选择尺寸</p>
+<p><img src="/../../images/image-20230510170327278.png" alt="image-20230510170327278"></p>
+<ul>
+<li><p>导航条：</p>
+</li>
+<li><p>搜索框</p>
+</li>
+<li><p>内容：</p>
+</li>
+<li><p>tab栏(就是底部选择哪个页面的)：</p>
+<ul>
+<li>主页(推荐页)</li>
+<li>队伍页面</li>
+<li>用户页面</li>
+</ul>
+</li>
+</ul>
+<p>。。。。</p>
+<h1 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><ul>
+<li>标签表</li>
+</ul>
+<blockquote>
+<ul>
+<li>id  int 主键</li>
+<li>标签名  varcahr  非空</li>
+<li>上传标签用户  userId  int</li>
+<li>父标签  parentId  int</li>
+<li>是否为父标签  isParent  tyint (0,1)</li>
+<li>创建时间  createTime</li>
+<li>更新时间  upDateTime</li>
+<li>是否删除  isDelete  tyint (0,1)</li>
+</ul>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tag</span><br><span class="line">(</span><br><span class="line">    tagName     <span class="type">VARCHAR</span>(<span class="number">256</span>)                       <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;标签名称&#x27;</span>,</span><br><span class="line">    id           <span class="type">BIGINT</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    userId           <span class="type">BIGINT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;用户 id&#x27;</span>,</span><br><span class="line">    parentId           <span class="type">BIGINT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;父标签 id&#x27;</span>,</span><br><span class="line">    isParent       TINYINT                            <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;是否为父标签&#x27;</span>,</span><br><span class="line">    createTime   DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    updateTime   DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    isDelete     TINYINT  <span class="keyword">DEFAULT</span> <span class="number">0</span>                 <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;是否删除&#x27;</span></span><br><span class="line"></span><br><span class="line">)</span><br><span class="line">    COMMENT <span class="string">&#x27;标签&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>用户表，复用用户中心项目的用户表。</li>
+</ul>
+<p>现在有两种做法让用户表和标签表扯上关系：</p>
+<blockquote>
+<p>1、User 表新增字段</p>
+<p>2、新建关联表，做userId到tagId的映射</p>
+<p>如何选择？</p>
+<p>第一种方式的优缺点：</p>
+<ul>
+<li>优点<ul>
+<li>不需要新建一个表</li>
+<li>查询比较方便，查询用户的时候就已经把标签带出来了</li>
+<li>并且如果我们以 Json字符串的形式同样能够很好的满足1对多的场景，同时根据标签名查找的时候可以直接用 模糊匹配的方式 匹配字符串来实现‘</li>
+<li>能够节省开发成本</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>在大数据量下可能 like 匹配速度较慢，但是我们可以通过缓存来优化，因为标签也是属于不经常变更的属性，就算变更造成不一致对结果影响不算特别大</li>
+</ul>
+</li>
+</ul>
+<p>第二种方式的优缺点：</p>
+<ul>
+<li>优点：<ul>
+<li>大数据量下的查询效率也能得到一定保证，配合缓存效果更佳</li>
+<li>关联表能够很容易的实现反向查找，比如说获得标签名下的所有用户，通过连表就能够解决</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>实现起来复杂，并且数据量一般不会很大没必要搞得这么复杂</li>
+<li>并且关联查询需要避免大量使用，在阿里巴巴规范中不建议超过三个表以上的关联，影响拓展性</li>
+</ul>
+</li>
+</ul>
+<p>综合考虑在当前项目中使用第一种做法</p>
+</blockquote>
+<p>分析到这里，是不是发现好像经常会用到对标签名进行查询，那是不是可以为tag表的标签名字段加上一个 索引，并且标签名是被要求唯一的，所以可以加上唯一索引。</p>
+<p>可以直接在idea里完成</p>
+<p><img src="/../../images/image-20230510193627768.png" alt="image-20230510193627768"></p>
+<h2 id="初始化后端代码"><a href="#初始化后端代码" class="headerlink" title="初始化后端代码"></a>初始化后端代码</h2><p>偷懒直接复制一份用户中心的代码，作为初始化代码。记得把.idea文件删掉，如果有.im文件也要删掉，这是保存原来的项目的内容。</p>
+<p> 在原来的基础上我们先来简单实现以下我们上面说到的根据用户的标签查询标签的功能。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(CollectionUtils.isEmpty(tagList))&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">BusinessException</span>(ErrorCode.PARAMS_ERROR);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LambdaQueryWrapper&lt;User&gt; userQw = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (String s : tagList) &#123;</span><br><span class="line">    userQw = userQw.like(User::getTags,s);	<span class="comment">//这里plus为我们提供的功能太强大了，我一开始还以为要						自己写mapper，结果它连like都可以拼接，但是只能通过and 拼接，后续可能要做优化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">List&lt;User&gt; collect = list(userQw).stream().map((user) -&gt; getSafetyUser(user)).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> collect;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>执行的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> id,username,userAccount,avatarUrl,gender,userPassword,phone,email,userStatus,createTime,updateTime,isDelete,userRole,planetCode,tags </span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> isDelete<span class="operator">=</span><span class="number">0</span> <span class="keyword">AND</span> (tags <span class="keyword">LIKE</span> ? <span class="keyword">AND</span> tags <span class="keyword">LIKE</span> ?)</span><br><span class="line"></span><br><span class="line">Parameters: <span class="operator">%</span>Java<span class="operator">%</span>(String), <span class="operator">%</span>C<span class="operator">+</span><span class="operator">+</span><span class="operator">%</span>(String)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当然也可以另一种实现方式，就是我先把所有的用户都查找出来，然后匹配每个用户的tags字段：</p>
+<p>我们查到每个用户，然后把tags字段从json string 转为 set集合，然后遍历搜索条件通过contains方法很快判断某个对象是否包含查询条件的字段。</p>
+<p>那么问题来了，怎么将一个json string 转为 set集合？</p>
+<p>肯定我们要用第三方的JSON转换工具，通常用 alibaba的fastjson，但是听说这个漏洞很多。 企业中也有很多用Gson谷歌的一款转换工具，我们都尝试使用一下。</p>
+<ul>
+<li>fastjson，String–&gt;set</li>
+</ul>
+<blockquote>
+<p>转成普通对象很容易，JSON.praseObject(strings，xxx.class)就行了，但是我们不能直接写</p>
+<p>Set&lt; String&gt;.class，那么就要通过<strong>TypeReference</strong> 来实现，它可以转为仍和类型的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; tags_set = JSON.parseObject(tags, <span class="keyword">new</span> <span class="title class_">TypeReference</span>&lt;Set&lt;String&gt;&gt;() &#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+<p> 真的非常牛。</p>
+</blockquote>
+<ul>
+<li>Gson，String–&gt;set</li>
+</ul>
+<blockquote>
+<p>先导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.google.code.gson<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>gson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用法其实是差不多的，只是听说漏洞较少</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Gson</span> <span class="variable">gson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Gson</span>();</span><br><span class="line"><span class="comment">//String--&gt;object</span></span><br><span class="line">Set&lt;String&gt; strings2 = gson.fromJson(tags, <span class="keyword">new</span> <span class="title class_">TypeToken</span>&lt;Set&lt;String&gt;&gt;() &#123;&#125;.getType());</span><br><span class="line"></span><br><span class="line"><span class="comment">//object--&gt;string</span></span><br><span class="line">gson.toJson(strings2);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>既然拿到了set，要判断就很容易了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从内存中获取</span></span><br><span class="line"><span class="keyword">public</span> List&lt;User&gt; <span class="title function_">getByLocal</span><span class="params">(List&lt;String&gt; tagList)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(CollectionUtils.isEmpty(tagList))&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">BusinessException</span>(ErrorCode.PARAMS_ERROR);</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;User&gt; list = list();</span><br><span class="line">    List&lt;User&gt; collect = list.stream()</span><br><span class="line">            .filter((user) -&gt; &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">tags</span> <span class="operator">=</span> user.getTags();</span><br><span class="line">                Set&lt;String&gt; set_tags = JSON.parseObject(tags, <span class="keyword">new</span> <span class="title class_">TypeReference</span>&lt;Set&lt;String&gt;&gt;() &#123;</span><br><span class="line">                &#125;);</span><br><span class="line">                <span class="keyword">for</span> (String s : tagList) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!set_tags.contains(s)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;).map((user -&gt; getSafetyUser(user))).collect(Collectors.toList());</span><br><span class="line">    <span class="keyword">return</span> collect;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>好的 ，那么问题又来了，这两种哪种性能好呢？</p>
+<p>做个简单的测试，但是大数据量下的情况下 查全部的还是优点危险的。</p>
+<p>结果优点出乎意料</p>
+<p><img src="/../../images/image-20230510221102390.png" alt="image-20230510221102390"></p>
+<p>居然查全在内存判断的速度快，并且快很多？？？？？是否有误差呢？</p>
+<p>这里可能出现第一次连接数据库需要花费比较多的时间，所以我们先进行一次空查询，然后再计算结果。</p>
+<p><img src="/../../images/image-20230510223041744.png" alt="image-20230510223041744"></p>
+<p>可以看到比较符合我们预期的结果，sql比内存来的快。但是这也只是简单的一个测试因为数据库数据实在太少了，体现不了查询的好坏。</p>
+<p>那问题又来了，现在我们有两种方法，如果在数据比较大的时候，有些时候sql快，有些时候本地快，我们如何抉择？</p>
+<blockquote>
+<p>1、如果谁快谁慢是能够被分析出来的，比如说tags的长度大于多少的时候sql快，小于多少的时候local快。那么我们就可以通过if去判断长度选择具体的方法，但是这个并不是特别智能。</p>
+<p> 2、谁快用谁，还记得JUC里面的CompleteFuture吗，我们直接开启两个线程去帮我们执行这这两个方法，反正返回的结果都是一样的，然后利用applyToEither方法，关联这两个任务谁先完成我们就是用谁作为返回结果，下面是测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">CompletableFuture&lt;HashMap&lt;String,Object&gt;&gt; getByLikeFuture = CompletableFuture.supplyAsync(<span class="keyword">new</span> <span class="title class_">Supplier</span>&lt;HashMap&lt;String,Object&gt;&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> HashMap&lt;String,Object&gt; <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        HashMap&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        List&lt;User&gt; byLike = getByLike(tagList);</span><br><span class="line">        map.put(<span class="string">&quot;res&quot;</span>,byLike);</span><br><span class="line">        map.put(<span class="string">&quot;method&quot;</span>,<span class="string">&quot;getByLike&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">CompletableFuture&lt;HashMap&lt;String,Object&gt;&gt; getByLocalFuture = CompletableFuture.supplyAsync(<span class="keyword">new</span> <span class="title class_">Supplier</span>&lt;HashMap&lt;String,Object&gt;&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> HashMap&lt;String,Object&gt; <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        HashMap&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        List&lt;User&gt; getByLocal = getByLocal(tagList);</span><br><span class="line">        map.put(<span class="string">&quot;res&quot;</span>,getByLocal);</span><br><span class="line">        map.put(<span class="string">&quot;method&quot;</span>,<span class="string">&quot;getByLocal&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">getByLikeFuture.applyToEither(getByLocalFuture, (result) -&gt; &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> (String)result.get(<span class="string">&quot;method&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;先完成的方法是：&quot;</span>+method);</span><br><span class="line">    <span class="keyword">return</span> result.get(<span class="string">&quot;res&quot;</span>);</span><br><span class="line">&#125;).join();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../images/image-20230510225816630.png" alt="image-20230510225816630"></p>
+<p>可以看到这种方式能够很好的满足我们的需求，但是需要注意只有在内存等资源充足的时候使用这种方式。</p>
+<p>这边的思路可以写到简历的某个项目的优化中，还是很不错的。</p>
+</blockquote>
+<p>有一个小tips，我们在对对象判空的时候，一般写的都是if …，为了好看一点实际上还可以用一个Java8的新的一个类Optional：</p>
+<p>上下两种方式结果是一样的，如果users为空，就创建一个。</p>
+<p><img src="/../../images/image-20230514090052906.png" alt="image-20230514090052906"></p>
+<h2 id="swagger2和knife4j"><a href="#swagger2和knife4j" class="headerlink" title="swagger2和knife4j"></a>swagger2和knife4j</h2><p>两个都是一个接口管理的页面，只不过原作者觉得swagger2的界面太丑 knife对swagger进行了增强。</p>
+<p>swagger2这里就不做过多介绍了，试试使用knife4j</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.xiaoymin<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>knife4j-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>配置和Swagger2差不多，但是EnableSwagger2WebMvc注解可能会找不到，只要将swagger2-ui和swagger2两个依赖注释掉只保留knife4j即可</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2WebMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Knife4jConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean(value = &quot;defaultApi2&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">defaultApi2</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .groupName(<span class="string">&quot;adminApi&quot;</span>)</span><br><span class="line">                .apiInfo(adminApiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ApiInfo <span class="title function_">adminApiInfo</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                .title(<span class="string">&quot;用户中心-API文档&quot;</span>)</span><br><span class="line">                .description(<span class="string">&quot;本文档描述了用户中心接口定义&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>报错，这个主要是MVC底层路由规则在2.3之后有发生修改，旧的Swagger不认识新的路由规则，而knife又是基于swagger2的所以也会报错。</li>
+</ul>
+<p><img src="/../../images/image-20230514102846754.png" alt="image-20230514102846754"></p>
+<p>需要加上以下配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">mvc:</span></span><br><span class="line">      <span class="attr">pathmatch:</span></span><br><span class="line">        <span class="attr">matching-strategy:</span> <span class="string">ant_path_matcher</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<ul>
+<li>请求： &#x2F;api&#x2F;doc.html</li>
+</ul>
+<p><img src="/../../images/image-20230514103328244.png" alt="image-20230514103328244"></p>
+<p>提供了直接的调试工具用着非常方便</p>
+<p><img src="/../../images/image-20230514103415243.png" alt="image-20230514103415243"></p>
+<p><img src="/../../images/image-20230514104342433.png" alt="image-20230514104342433"></p>
+<p>而且 他会记录 cookie和session</p>
+<p><img src="/../../images/image-20230514104420026.png" alt="image-20230514104420026"></p>
+<h2 id="分布式登录"><a href="#分布式登录" class="headerlink" title="分布式登录"></a>分布式登录</h2><p>之前我们都是通过token，jwt然后配置过滤器的方式实现sso的，这里演示另一种实现方式，通过整合redis 和 spirng-session-redis，每次将session存到redis中，并且每次从redis中取session。</p>
+<p>实际上是类似的意思。但是比起使用jwt简单非常多</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.session<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-session-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li>配置存储方式</li>
+</ul>
+<p><img src="/../../images/image-20230514123358055.png" alt="image-20230514123358055"></p>
+<p>到这里就已经能够实现分布式登录了，我们连redis配置都不用写。</p>
+<p><img src="/../../images/image-20230514124117149.png" alt="image-20230514124117149"></p>
+<p>我们启动两个服务，如果没有使用分布式登录的话，我们如果在8080登录，在8081调用getCurrentUser肯定是拿不到结果的。但是我们现在来测试一下。</p>
+<ul>
+<li>8080，登录</li>
+</ul>
+<p><img src="/../../images/image-20230514124430928.png" alt="image-20230514124430928"></p>
+<ul>
+<li>8081，获取</li>
+</ul>
+<p><img src="/../../images/image-20230514124447364.png" alt="image-20230514124447364"></p>
+<ul>
+<li>redis 客户端，存储的就是session 的信息</li>
+</ul>
+<p><img src="/../../images/image-20230514124527407.png" alt="image-20230514124527407"></p>
+<h2 id="大批量插入数据"><a href="#大批量插入数据" class="headerlink" title="大批量插入数据"></a>大批量插入数据</h2><p>这也可以当作是一个面试题，就是如果要你导入1000w条数据你会怎么操作？</p>
+<h3 id="1、暴力for循环，for-0-1000w"><a href="#1、暴力for循环，for-0-1000w" class="headerlink" title="1、暴力for循环，for(0-1000w)"></a>1、暴力for循环，for(0-1000w)</h3><p>自己的项目可以这么干，但是实际中肯定不行。因为写数据库比较耗时，况且还是大批量的写入，可能要花费几十分钟甚至一个小时以上，那么这时候数据库压力就会非常大，可能导致数据库无法查询，从而导致用户无法使用接口。  </p>
+<p>最重要的是这种插入会导致系统变得不可控，如果运维要你停止插入，你要到机器中终止这个进程，终止这个进程可能还会导致原本项目部分接口不能使用，所以非常危险直接暴力插入。</p>
+<ul>
+<li>做十条数据的测试</li>
+</ul>
+<p><img src="/../../images/image-20230514143202401.png" alt="image-20230514143202401"></p>
+<p>10条数据花费了273ms，如果1000条就要30s，1000W就是30Ws，5000分钟？？</p>
+<p>其实我们可以看到每次插入数据都要建立连接和关闭连接，这一块的开销是非常大的。</p>
+<h3 id="2、分批插入"><a href="#2、分批插入" class="headerlink" title="2、分批插入"></a>2、分批插入</h3><p>分批插入数据，甚至可以用上异步任务或者多线程处理</p>
+<p>所以我们可以用mybatis plus为我们提供的批量插入数据。</p>
+<p><img src="/../../images/image-20230514144054475.png" alt="image-20230514144054475"></p>
+<ul>
+<li>结果，可以发现几乎不到1s就执行完了1000条的插入</li>
+</ul>
+<p><img src="/../../images/image-20230514144128848.png" alt="image-20230514144128848"></p>
+<ul>
+<li>10w条数据插入，花费了1分多钟</li>
+</ul>
+<p><img src="/../../images/image-20230514144804875.png" alt="image-20230514144804875"></p>
+<p>还是不是很快，我们可以通过异步的方法，让每个线程去执行一次批量插入。</p>
+<ul>
+<li>10个线程，每个线程插入1w条数据</li>
+</ul>
+<p><img src="/../../images/image-20230515134832112.png" alt="image-20230515134832112"></p>
+<ul>
+<li>结果，可以发现是快了不少的</li>
+</ul>
+<p><img src="/../../images/image-20230515134844275.png" alt="image-20230515134844275"></p>
+<h2 id="大数据量查询和返回"><a href="#大数据量查询和返回" class="headerlink" title="大数据量查询和返回"></a>大数据量查询和返回</h2><p>上面我们也做了几次插入数据了，如果此时前端发出的请求，要查询所有的，你可以直接将所有数据返回吗？</p>
+<p>显然是不可以的，一是查询的慢，二是前端接收数据的长度是有限的，返回这么大量的数据前端可能直接崩溃了，所以我们在查询的时候必须要进行分页。</p>
+<p>mybatis plus 实现分页流程：</p>
+<p>1、配置拦截器</p>
+<p><img src="/../../images/image-20230515143400353.png" alt="image-20230515143400353"></p>
+<p>2、创建page对象</p>
+<p>3、通过service的page方法代替list方法</p>
+<p><img src="/../../images/image-20230515143405657.png" alt="image-20230515143405657"></p>
+<ul>
+<li>查询时间、并且返回的时间</li>
+</ul>
+<p><img src="/../../images/image-20230515151627684.png" alt="image-20230515151627684"></p>
+<p>可以看到时间一秒多，查8条数据并且返回，此时数据库一共有70W条数据，那如果再多，查数据库的速度就会变得更慢，是让人难以接受的，所以我们可以加上缓存来优化查询的速度。</p>
+<p>使用缓存，但是第一个用户还是访问比较慢，如何解决？</p>
+<p>使用缓存预热，将部分数据先加载到Redis中。缓存预热是个不错的做法但是有什么缺点？</p>
+<blockquote>
+<p>1、增加开发成本，需要确定好预热的数据和时机</p>
+<p>2、占用Redis空间，如果正常运行的时候Redis已经快满了，还要预热数据就很容易造成Redis OOM。</p>
+</blockquote>
+<h3 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h3><p>怎么实现缓存预热，有哪些注意点。</p>
+<ul>
+<li>只加载一次不需要跟新的：项目启动后自动加载，实现CommandLineRunner接口，实现run方法。</li>
+<li>可能会需要跟新的：定时任务，</li>
+</ul>
+<p>缓存预热需要注意哪些：</p>
+<ul>
+<li><p>预热的时机和数据，不能太多不要占过多的空间，一般把热点数据加进去就行了</p>
+</li>
+<li><p>数据是否需要跟新，防止预热的数据太老，跟新的频率和时机，不能在用户活跃的情况下进行跟新。</p>
+</li>
+<li><p>对于分布式项目，整个项目中同一个定时任务，只有一个服务器执行真正的逻辑，因为如果一个项目部署到了多台服务器，每个服务器都到期会执行一次定时任务，如果这个定时任务需要大规模的读写数据库，那岂不是可能会操作数据库被我们自己搞死了。并且对于写数据库，还可能会出现写入重复的数据。怎么实现？</p>
+<ul>
+<li>分离定时任务，把定时任务单独部署。太麻烦，成本太高</li>
+<li>加上配置判断，比如通过一个配置，只允许一个IP执行真实逻辑，其他的都直接返回。<ul>
+<li>Nacos</li>
+<li>Redis</li>
+<li>Mysql</li>
+</ul>
+</li>
+<li>分布式锁，setnx简单实现、hash结构增加可重入性、rediss直接实现。 使用分布式锁的时候可能还会出现一种情况，就是如果Redis也是集群配置的时候，会不会出现加锁出现数据不一致的情况？</li>
+</ul>
+<blockquote>
+<p>答案显然是会的，因为Redis只要主节点完成写入就会向用户返回写入成功，然后重启线程开始主从复制，所以可能在复制过程中出现异常，比如主节点宕机，然后从节点上位，造成数据不一致。</p>
+<p>为了解决这样的问题，Redis提出了一种红锁算法，就是部署的都是Redis主节点，并且写锁的时候只有大于1&#x2F;2的节点写入成功才算获得锁，从而尽量避免了主节点宕机出现的各种问题。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="组队功能"><a href="#组队功能" class="headerlink" title="组队功能"></a>组队功能</h2><h3 id="需求分析-1"><a href="#需求分析-1" class="headerlink" title="需求分析"></a>需求分析</h3><p>用户可以 <strong>创建</strong> 一个队伍，设置队伍的人数、队伍名称（标题）、描述、超时时间 P0</p>
+<blockquote>
+<p>队长、剩余的人数</p>
+<p>公开 或 private 或加密</p>
+<p><strong>用户创建队伍最多 5 个</strong></p>
+</blockquote>
+<p>展示队伍列表，根据名称搜索队伍  P0，信息流中不展示已过期的队伍</p>
+<p>修改队伍信息 P0 ~ P1</p>
+<p>用户可以加入队伍（其他人、未满、未过期），允许加入多个队伍，但是要有个上限  P0</p>
+<blockquote>
+<p>是否需要队长同意？筛选审批？</p>
+</blockquote>
+<p>用户可以退出队伍（如果队长退出，权限转移给第二早加入的用户 —— 先来后到） P1</p>
+<p>队长可以解散队伍 P0</p>
+<p>这里其实和标签和用户表挺像的，同样会遇到一个用户对应多个小队、一个小队对应多个用户的问题，那既然上面用了增加字段的实现方式，这里就用分表实现的方式。</p>
+<p>队伍表：team、用户–&gt;队伍的表  user_team。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> team</span><br><span class="line">(</span><br><span class="line">    id          <span class="type">BIGINT</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    NAME        <span class="type">VARCHAR</span>(<span class="number">256</span>)       <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;队伍名称&#x27;</span>,</span><br><span class="line">    description <span class="type">VARCHAR</span>(<span class="number">1024</span>) <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;描述&#x27;</span>,</span><br><span class="line">    maxNum      <span class="type">INT</span>      <span class="keyword">DEFAULT</span> <span class="number">1</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;最大人数&#x27;</span>,</span><br><span class="line">    expireTime  DATETIME <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;过期时间&#x27;</span>,</span><br><span class="line">    userId      <span class="type">BIGINT</span> COMMENT <span class="string">&#x27;用户id（队长 id）&#x27;</span>,</span><br><span class="line">    STATUS      <span class="type">INT</span>      <span class="keyword">DEFAULT</span> <span class="number">0</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;0 - 公开 1 - 私有 2 - 加密&#x27;</span>,</span><br><span class="line">    PASSWORD    <span class="type">VARCHAR</span>(<span class="number">512</span>) <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;密码&#x27;</span>,</span><br><span class="line">    createTime  DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    updateTime  DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    isDelete    TINYINT  <span class="keyword">DEFAULT</span> <span class="number">0</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;是否删除&#x27;</span></span><br><span class="line">) COMMENT <span class="string">&#x27;队伍&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 用户队伍关系</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user_team</span><br><span class="line">(</span><br><span class="line">    id         <span class="type">BIGINT</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span></span><br><span class="line">        <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    userId     <span class="type">BIGINT</span> COMMENT <span class="string">&#x27;用户id&#x27;</span>,</span><br><span class="line">    teamId     <span class="type">BIGINT</span> COMMENT <span class="string">&#x27;队伍id&#x27;</span>,</span><br><span class="line">    joinTime   DATETIME <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;加入时间&#x27;</span>,</span><br><span class="line">    createTime DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    updateTime DATETIME <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">NULL</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    isDelete   TINYINT  <span class="keyword">DEFAULT</span> <span class="number">0</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;是否删除&#x27;</span></span><br><span class="line">) COMMENT <span class="string">&#x27;用户队伍关系&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>实现简单的curd这里就不列出来了。但是有一个问题，就是为什么有些时候我们要封装好 Dto、Vo？</p>
+<blockquote>
+<p>Dto：</p>
+<p>一般是对前端请求后端的参数的封装， </p>
+<ul>
+<li>请求的字段的名&#x2F;类型和实体类可能不一样</li>
+<li>有些参数用不到，降低理解成本</li>
+</ul>
+<p>Vo：</p>
+<p>一般是后端返回给前端的数据的封装，</p>
+<ul>
+<li>除了上面的两个类似的问题以外</li>
+<li>还有一个更重要的就是在于有些数据对于前端是需要脱敏的，不能够返回给前端让前端或者用户看到</li>
+</ul>
+</blockquote>
+<p>那有了封装的对象，我们难免会经常要进行Dto–&gt;实体类，实体类–&gt;Vo的映射，总不可能我们重复写set、get？</p>
+<p>我们可以使用Apache的一个BeanUtils工具类帮我们完成。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-lang3<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.12.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-beanutils<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-beanutils<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-collections<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-collections<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../../images/image-20230515201854781.png" alt="image-20230515201854781"></p>
+<p>写多了还是觉得很麻烦，经常要创建一个对象还要写try catch这样的，所以对其再进行封装：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">BeanCopy</span><span class="params">(Class&lt;T&gt; clazz,Object orgin)</span>&#123;</span><br><span class="line">    <span class="type">T</span> <span class="variable">result</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        result = clazz.newInstance();</span><br><span class="line">        BeanUtils.copyProperties(result,orgin);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>其他的接口就不提了，这里要注意一点加入队伍，在高并发的情况下可能会出现问题。</p>
+<p>可能一个用户加入多次小队，所以我们需要对加入队伍里面的逻辑进行加锁处理，但是如果只是简单的加锁，相当于每个到达同步代码块的线程都会被拦住。但是每个线程加入的可能又不同一个队伍，所以锁整个方法或者是整个加入队伍的逻辑，锁的粒度都太大了，但是好像也想不到比较好的优化方式。</p>
+<h2 id="用户匹配"><a href="#用户匹配" class="headerlink" title="用户匹配"></a>用户匹配</h2><ol>
+<li>找到有共同标签最多的用户（TopN）</li>
+<li>共同标签越多，分数越高，越排在前面</li>
+<li>如果没有匹配的用户，随机推荐几个（降级方案）</li>
+</ol>
+<p>编辑距离算法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/DBC_121/article/details/104198838">https://blog.csdn.net/DBC_121/article/details/104198838</a></p>
+<blockquote>
+<p>最小编辑距离：字符串 1 通过最少多少次增删改字符的操作可以变成字符串 2</p>
+</blockquote>
+<p>余弦相似度算法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_55613022/article/details/125683937%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E5%B8%A6%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%EF%BC%8C%E6%AF%94%E5%A6%82%E5%AD%A6%E4%BB%80%E4%B9%88%E6%96%B9%E5%90%91%E6%9C%80%E9%87%8D%E8%A6%81%EF%BC%8C%E6%80%A7%E5%88%AB%E7%9B%B8%E5%AF%B9%E6%AC%A1%E8%A6%81%EF%BC%89">https://blog.csdn.net/m0_55613022/article/details/125683937（如果需要带权重计算，比如学什么方向最重要，性别相对次要）</a></p>
+<h3 id="怎么匹配？"><a href="#怎么匹配？" class="headerlink" title="怎么匹配？"></a>怎么匹配？</h3><p>取出所有用户依次匹配tags，太暴力性能差。</p>
+<p>能做哪些优化？</p>
+<ul>
+<li>对于某些数据结构，可能会存储很多没用的内容，比如 map在这里我们用作存放每个用户和当前用户匹配计算的距离，但是实际上我们可以只需要存放前五或者前几的用户，减少比较大的内存开销。</li>
+<li>查询全表的时候，我们尽量只查找我们需要的几个字段，而不是一股脑的select *</li>
+<li>先剔除不可能满足条件的用户</li>
+<li>提前先查找好，然后放缓存，用户需要的时候直接从缓存获取，提升用户体验</li>
+<li>还有一个就是，在大量的SQL查询的时候一定要关闭日志输出</li>
+</ul>
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><h2 id="私聊"><a href="#私聊" class="headerlink" title="私聊"></a>私聊</h2><p>sendId+receivedId&#x3D;&#x3D;&gt; roomId</p>
+<p>Room：</p>
+<ul>
+<li>id</li>
+<li>sendId</li>
+<li>receivedId</li>
+<li>time</li>
+<li>sort_flag：sendId和receivedId的组合，用于方便查找RoomId</li>
+</ul>
+<p>Message：</p>
+<ul>
+<li>id</li>
+<li>sendId</li>
+<li>receivedId</li>
+<li>read</li>
+<li>roomId</li>
+<li>time</li>
+<li>context</li>
+</ul>
+<h3 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h3><p>用于完成消息的发送。</p>
+<ul>
+<li>基本定义</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ServerEndpoint(&quot;/websockettest/private/&#123;sendId&#125;/&#123;receiveId&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebSocketTest</span> &#123;</span><br><span class="line">    <span class="meta">@OnOpen</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">OnOpen</span><span class="params">(Session session, <span class="meta">@PathParam(&quot;sendId&quot;)</span>String sendId,<span class="meta">@PathParam(&quot;receiveId&quot;)</span>String receiveId)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OnMessage</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">OnMessage</span><span class="params">(Session session, String message)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OnClose</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">OnClose</span><span class="params">()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OnError</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">void</span> <span class="title function_">OnError</span><span class="params">(Session session,Throwable throwable)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>@ServerEndpoint</li>
+</ul>
+<p>用于将这个类标识为Websocket的服务器节点，前端通过发送 </p>
+<p><strong>ws: http:&#x2F;localhost:8080&#x2F;api&#x2F;&#x2F;websockettest&#x2F;private&#x2F;{sendId}&#x2F;{receiveId}</strong> 请求来完成websocket连接建立。</p>
+<p>下面几个方法的注解就是用于触发特定的事件的。</p>
+<p>@ServerEndpoint，有一个比较坑的地方，，这个类被视为一个 WebSocket 端点（Endpoint），会让自动注入失效，因为该注解是 Java API for WebSocket 提供的，用于处理 WebSocket 连接的创建和管理。WebSocket 的生命周期由 Java API for WebSocket 管理，而不是由 Spring 管理。虽然同时加了类似于@Component的注解，但是@ServerEndpoint优先级更高，因此，Spring 的依赖注入机制不会生效。</p>
+<p>解决办法：</p>
+<p>其实这种做法是一种通用的解法，通过配置我们自己的SpringContext，在自动注入失效的类上通过手动注入。</p>
+<ul>
+<li>SpringContextUtils，用于手动获取bean，实现ApplicationContextAware接口，接口提供了一个方法 <code>setApplicationContext(ApplicationContext applicationContext)</code>，**当一个 bean 实现了该接口并被 Spring 管理时(也就是说我们在使用的时候，这并不是一个普通的utils对象，而是同样需要被Spring管理的对象)**，Spring 会在 bean 初始化过程中自动调用该方法，并将 ApplicationContext 的引用作为参数传递给该方法。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringContextUtills</span> <span class="keyword">implements</span> <span class="title class_">ApplicationContextAware</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ApplicationContext applicationContext;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setApplicationContext</span><span class="params">(ApplicationContext applicationContext)</span> <span class="keyword">throws</span> BeansException &#123;</span><br><span class="line">        SpringContextUtills.applicationContext = applicationContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">getBean</span><span class="params">(Class&lt;T&gt; clazz)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (T)applicationContext.getBean(clazz);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>有了这个bean，在无法完成自动注入的类中，可以直接通过这个类所提供的方法获取到spring管理的bean。</p>
+<p>用户登录就创建服务器连接：</p>
+<p>连接路径：&#x2F;websockettest&#x2F;private&#x2F;{sendId}</p>
+<p>用户退出关闭连接</p>
+<p>用户想和谁聊天，就只需要传递对方的id给服务器。</p>
+<p>发送方&#x2F;接收方：</p>
+<ul>
+<li><p>创建到服务器的连接</p>
+<ul>
+<li>查数据库，看看有没有未读的消息</li>
+</ul>
+</li>
+<li><p>发送消息</p>
+<ul>
+<li><p>消息：由于服务器方法只能接收一个string，所以应该传json，里面包含：接收方、消息内容等信息。</p>
+</li>
+<li><p>接收方没有创建连接：只写入mysql</p>
+</li>
+<li><p>接收方创建了连接：写入mysql，且实时发送</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="群聊"><a href="#群聊" class="headerlink" title="群聊"></a>群聊</h2><h2 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h2><p>Topic 话题表：</p>
+<ul>
+<li><p>id</p>
+</li>
+<li><p>createBy</p>
+</li>
+<li><p>summary：varchar 1024</p>
+</li>
+<li><p>context：longtext</p>
+</li>
+<li><p>createTime</p>
+</li>
+<li><p>updateTime</p>
+</li>
+<li><p>isDelete</p>
+</li>
+<li><p>viewCount</p>
+</li>
+<li><p>thumbnail：varchar</p>
+</li>
+<li><p>tags：varchar</p>
+</li>
+</ul>
+<p>Comment 评论表：</p>
+<p>pass</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io">异梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yimeng436.github.io/2022/08/22/Project-GamerMatch/Project-GamerMatch/">https://yimeng436.github.io/2022/08/22/Project-GamerMatch/Project-GamerMatch/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yimeng436.github.io" target="_blank">异梦的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/top.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/22/Project-Bi/Project-Bi/"><img class="prev-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Project</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/22/Project-OJ/Project-OJ/"><img class="next-cover" src="/img/top.png" onerror="onerror=null;src='/img/cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Project</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/04/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/%E5%A4%9A%E6%80%81%E4%BE%8B%E9%A2%98/" title="多态例题"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-04</div><div class="title">多态例题</div></div></a></div><div><a href="/2022/06/06/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/" title="自动拆装箱"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-06</div><div class="title">自动拆装箱</div></div></a></div><div><a href="/2022/06/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">多线程</div></div></a></div><div><a href="/2022/06/30/JavaWeb/JavaWeb/" title="JavaWeb"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-30</div><div class="title">JavaWeb</div></div></a></div><div><a href="/2022/07/25/Mybatis/Mybatis/" title="Mybatis"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-25</div><div class="title">Mybatis</div></div></a></div><div><a href="/2022/07/26/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" title="注解和反射"><img class="cover" src="/img/top.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-26</div><div class="title">注解和反射</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://mms2.baidu.com/it/u=665033858,976373917&amp;fm=253&amp;app=138&amp;f=JPEG&amp;fmt=auto&amp;q=75?w=500&amp;h=500" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">异梦</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yimeng436" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2441844062@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%83%A8%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">前端部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">3.1.</span> <span class="toc-text">项目初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A1%B5"><span class="toc-number">3.2.</span> <span class="toc-text">主页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E9%83%A8%E5%88%86"><span class="toc-number">4.</span> <span class="toc-text">后端部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.1.</span> <span class="toc-text">数据库设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="toc-number">4.2.</span> <span class="toc-text">初始化后端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swagger2%E5%92%8Cknife4j"><span class="toc-number">4.3.</span> <span class="toc-text">swagger2和knife4j</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%99%BB%E5%BD%95"><span class="toc-number">4.4.</span> <span class="toc-text">分布式登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">4.5.</span> <span class="toc-text">大批量插入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%9A%B4%E5%8A%9Bfor%E5%BE%AA%E7%8E%AF%EF%BC%8Cfor-0-1000w"><span class="toc-number">4.5.1.</span> <span class="toc-text">1、暴力for循环，for(0-1000w)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%88%86%E6%89%B9%E6%8F%92%E5%85%A5"><span class="toc-number">4.5.2.</span> <span class="toc-text">2、分批插入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F%E6%9F%A5%E8%AF%A2%E5%92%8C%E8%BF%94%E5%9B%9E"><span class="toc-number">4.6.</span> <span class="toc-text">大数据量查询和返回</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD"><span class="toc-number">4.6.1.</span> <span class="toc-text">缓存预热</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E9%98%9F%E5%8A%9F%E8%83%BD"><span class="toc-number">4.7.</span> <span class="toc-text">组队功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90-1"><span class="toc-number">4.7.1.</span> <span class="toc-text">需求分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%8C%B9%E9%85%8D"><span class="toc-number">4.8.</span> <span class="toc-text">用户匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%8C%B9%E9%85%8D%EF%BC%9F"><span class="toc-number">4.8.1.</span> <span class="toc-text">怎么匹配？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">5.</span> <span class="toc-text">拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E8%81%8A"><span class="toc-number">5.1.</span> <span class="toc-text">私聊</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#websocket"><span class="toc-number">5.1.1.</span> <span class="toc-text">websocket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E8%81%8A"><span class="toc-number">5.2.</span> <span class="toc-text">群聊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%9D%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text">话题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/19/MySQL%E5%8E%9F%E7%90%86%E9%83%A8%E5%88%86/MySQL%E5%8E%9F%E7%90%86%E9%83%A8%E5%88%86/" title="MySQL原理"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="MySQL原理"/></a><div class="content"><a class="title" href="/2023/08/19/MySQL%E5%8E%9F%E7%90%86%E9%83%A8%E5%88%86/MySQL%E5%8E%9F%E7%90%86%E9%83%A8%E5%88%86/" title="MySQL原理">MySQL原理</a><time datetime="2023-08-18T16:00:00.000Z" title="发表于 2023-08-19 00:00:00">2023-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/19/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="算法笔记"/></a><div class="content"><a class="title" href="/2023/08/19/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记">算法笔记</a><time datetime="2023-08-18T16:00:00.000Z" title="发表于 2023-08-19 00:00:00">2023-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" title="前端知识"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="前端知识"/></a><div class="content"><a class="title" href="/2023/06/06/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" title="前端知识">前端知识</a><time datetime="2023-06-05T16:00:00.000Z" title="发表于 2023-06-06 00:00:00">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="FSAF论文"/></a><div class="content"><a class="title" href="/2022/10/14/Paper-FSAF/Paper-FSAF/" title="FSAF论文">FSAF论文</a><time datetime="2022-10-13T16:00:00.000Z" title="发表于 2022-10-14 00:00:00">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文"><img src="/img/top.png" onerror="this.onerror=null;this.src='/img/cover.png'" alt="Faster-RCNN论文"/></a><div class="content"><a class="title" href="/2022/08/25/Paper-Faster-RCNN/Paper-Faster-RCNN/" title="Faster-RCNN论文">Faster-RCNN论文</a><time datetime="2022-08-24T16:00:00.000Z" title="发表于 2022-08-25 00:00:00">2022-08-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 异梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
